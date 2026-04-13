@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <title>GreenProxy - Dịch vụ Proxy chất lượng cao</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta
+      name="keywords"
+      content="proxy, residential proxy, mobile proxy, datacenter proxy, socks5 proxy"
+    />
+    <meta
+      name="description"
+      content="GreenProxy cung cấp proxy dân cư, proxy mobile, proxy datacenter tốc độ cao, ổn định và hỗ trợ 24/7."
+    />
+    <link href="img/favicon.ico" rel="icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-dark: #063b32;
+        --primary-green: #007b5e;
+        --primary-light: #00a37a;
+        --soft-bg: #f5fbf8;
+        --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+      body {
+        font-family: "Open Sans", sans-serif;
+        color: #333;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .navbar-brand {
+        font-family: "Montserrat", sans-serif;
+      }
+      .hero-proxy {
+        background:
+          linear-gradient(rgba(6, 59, 50, 0.88), rgba(0, 123, 94, 0.82)),
+          url("img/carousel-1.jpg") center center / cover no-repeat;
+      }
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.14);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .proxy-search-box {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: var(--card-shadow);
+        padding: 20px;
+        margin-top: -55px;
+        position: relative;
+        z-index: 10;
+      }
+      .proxy-card {
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: var(--card-shadow);
+        padding: 28px 24px;
+        height: 100%;
+        transition: all 0.3s ease;
+        border-top: 4px solid transparent;
+      }
+      .proxy-card:hover {
+        transform: translateY(-8px);
+        border-top-color: var(--primary-light);
+      }
+      .proxy-icon {
+        width: 66px;
+        height: 66px;
+        border-radius: 18px;
+        background: rgba(0, 123, 94, 0.1);
+        color: var(--primary-green);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 28px;
+        margin-bottom: 18px;
+      }
+      .proxy-tag {
+        display: inline-block;
+        background: #e9fff7;
+        color: var(--primary-green);
+        padding: 6px 12px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+      .proxy-card ul {
+        padding-left: 0;
+        list-style: none;
+        margin-bottom: 0;
+      }
+      .proxy-card ul li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eef1f4;
+        font-size: 14px;
+      }
+      .proxy-card ul li:last-child {
+        border-bottom: none;
+      }
+      .proxy-card ul li i {
+        color: var(--primary-green);
+        margin-right: 8px;
+      }
+      .feature-box {
+        background: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+      .feature-box i {
+        color: var(--primary-green);
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+      .plan-card {
+        background: #fff;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        height: 100%;
+        transition: 0.3s ease;
+        border: 2px solid transparent;
+      }
+      .plan-card:hover {
+        transform: translateY(-8px);
+      }
+      .plan-card.featured {
+        border-color: var(--primary-light);
+      }
+      .plan-header {
+        padding: 28px 24px 18px;
+        text-align: center;
+        background: linear-gradient(135deg, #f7fffb 0%, #eefaf5 100%);
+      }
+      .plan-header h4 {
+        margin-bottom: 12px;
+      }
+      .price {
+        font-size: 42px;
+        font-weight: 800;
+        color: var(--primary-green);
+        line-height: 1;
+      }
+      .price small {
+        font-size: 14px;
+        color: #666;
+        font-weight: 600;
+      }
+      .plan-body {
+        padding: 24px;
+      }
+      .plan-body ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+      }
+      .plan-body ul li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eff2f5;
+      }
+      .plan-body ul li:last-child {
+        border-bottom: none;
+      }
+      .plan-body ul li i {
+        color: var(--primary-green);
+        margin-right: 8px;
+      }
+      .use-case-card {
+        background: var(--soft-bg);
+        border-radius: 18px;
+        padding: 26px 22px;
+        height: 100%;
+      }
+      .section-soft {
+        background: var(--soft-bg);
+      }
+      .number-box {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        padding: 26px 18px;
+        text-align: center;
+      }
+      .number-box h2 {
+        color: var(--primary-green);
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+      .faq-wrap .accordion-item {
+        border: none;
+        border-radius: 14px !important;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+        margin-bottom: 16px;
+      }
+      .faq-wrap .accordion-button {
+        font-weight: 700;
+        color: #222;
+        background: #fff;
+        box-shadow: none !important;
+      }
+      .faq-wrap .accordion-button:not(.collapsed) {
+        color: var(--primary-green);
+        background: #f7fffb;
+      }
+      .cta-box {
+        background: linear-gradient(135deg, #007b5e 0%, #00a37a 100%);
+        border-radius: 22px;
+        padding: 40px 30px;
+      }
+      .footer-news-box input {
+        border-radius: 12px;
+      }
+      .btn-round {
+        border-radius: 999px;
+      }
+      @media (max-width: 991.98px) {
+        .hero-proxy {
+          text-align: center;
+        }
+        .proxy-search-box {
+          margin-top: 30px;
+        }
+      }
+      /* Chỉnh vị trí dropdown trên navbar */
+      .navbar .nav-item.dropdown {
+        position: relative;
+      }
+
+      .navbar .nav-item.dropdown .dropdown-menu {
+        top: 100% !important;
+        margin-top: -20px !important;
+      }
+
+      /* Mega menu */
+      .mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-dropdown .mega-menu {
+        width: 900px;
+        max-width: 95vw;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+        padding: 22px 24px;
+        border: none;
+        border-radius: 0;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        top: 100% !important;
+        margin-top: -14px !important;
+      }
+
+      .mega-col {
+        padding: 0 20px;
+        border-right: 1px solid #e9ecef;
+      }
+
+      .mega-col:last-child {
+        border-right: none;
+      }
+
+      .mega-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .mega-item {
+        display: block;
+        text-decoration: none;
+        margin-bottom: 18px;
+      }
+
+      .mega-item h5 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 4px;
+        transition: color 0.2s ease;
+      }
+
+      .mega-item p {
+        font-size: 13px;
+        color: #888;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .mega-item:hover h5 {
+        color: #86c200;
+      }
+
+      .mega-item:hover p {
+        color: #666;
+      }
+
+      @media (max-width: 991.98px) {
+        .mega-dropdown {
+          position: relative !important;
+        }
+
+        .mega-dropdown .mega-menu {
+          width: 100%;
+          left: 0 !important;
+          transform: none;
+          max-width: 100%;
+          padding: 15px;
+          margin-top: 0 !important;
+        }
+
+        .mega-col {
+          border-right: none;
+          padding: 0;
+          margin-bottom: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Navbar -->
+      <div class="container-xxl position-relative p-0">
+        <nav
+          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+        >
+          <a href="index.html" class="navbar-brand p-0">
+            <h1 class="m-0"><i class="fa fa-server me-3"></i>GreenHost</h1>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link">TRANG CHỦ</a>
+
+              <a href="proxy.html" class="nav-item nav-link active">PROXY</a>
+
+              <!-- TÊN MIỀN -->
+              <div class="nav-item dropdown mega-dropdown domain-mega-dropdown">
+                <a
+                  href="domain.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  onclick="window.location.href = 'domain.html'"
+                >
+                  TÊN MIỀN
+                </a>
+
+                <div class="dropdown-menu mega-menu domain-mega-menu m-0">
+                  <div class="row g-0">
+                    <div class="col-lg-6 mega-col">
+                      <h6 class="mega-title">TÊN MIỀN</h6>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Đăng Ký Tên Miền</h5>
+                        <p>Đừng kinh doanh khi chưa có tên miền</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Bảng Giá Tên Miền</h5>
+                        <p>Giá & thông tin các loại tên miền</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Chuyển Về P.A</h5>
+                        <p>Chuyển tên miền từ nơi khác về P.A Việt Nam</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Tìm Tên Miền</h5>
+                        <p>Khám phá thế giới tên miền</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Tên Miền Miễn Phí</h5>
+                        <p>Phù hợp mọi đối tượng, tiết kiệm chi phí</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Tên Miền Tự Do</h5>
+                        <p>Tên miền .VN hết hạn có thể đăng ký</p>
+                      </a>
+                    </div>
+
+                    <div class="col-lg-6 mega-col">
+                      <h6 class="mega-title">DỊCH VỤ</h6>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Bảo Mật Tên Miền</h5>
+                        <p>Bảo vệ an toàn tuyệt đối</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Tiện Ích DNS</h5>
+                        <p>Công cụ cần thiết và thiết yếu</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Chuyển Nhượng Tên Miền</h5>
+                        <p>Giao dịch an toàn và nhanh chóng</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- WEB & HOSTING -->
+              <div class="nav-item dropdown mega-dropdown">
+                <a
+                  href="hosting.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  onclick="window.location.href = 'hosting.html'"
+                >
+                  WEB & HOSTING
+                </a>
+
+                <div class="dropdown-menu mega-menu m-0">
+                  <div class="row g-0">
+                    <div class="col-lg-4 mega-col">
+                      <h6 class="mega-title">HOSTING</h6>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Web Hosting</h5>
+                        <p>Hosting chuyên nghiệp, hiệu suất vượt trội</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>WordPress</h5>
+                        <p>Thiết kế đặc biệt tối ưu tốc độ</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Enterprise Hosting</h5>
+                        <p>Chuẩn doanh nghiệp, tốc độ cao</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Nodejs</h5>
+                        <p>API RESTful, Microservices, IoT, Realtime Web App</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Python</h5>
+                        <p>Hỗ trợ Django, Flask, NumPy...</p>
+                      </a>
+                    </div>
+
+                    <div class="col-lg-4 mega-col">
+                      <h6 class="mega-title">SERVERS</h6>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Cloud Server</h5>
+                        <p>Hiệu suất cao, dễ dàng mở rộng</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Virtual Private Cloud</h5>
+                        <p>Tài nguyên riêng, ổn định cao</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Dedicated Server</h5>
+                        <p>Phần cứng mạnh, hiệu suất vượt trội</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Máy chủ Python</h5>
+                        <p>Quyền SSH cao, framework đầy đủ</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Co-Location</h5>
+                        <p>Thuê chỗ đặt máy chủ với chi phí tốt</p>
+                      </a>
+                    </div>
+
+                    <div class="col-lg-4 mega-col">
+                      <h6 class="mega-title">GIẢI PHÁP</h6>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Hosting Doanh Nghiệp</h5>
+                        <p>Phù hợp website công ty và hệ thống lớn</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Email Hosting</h5>
+                        <p>Email tên miền riêng, ổn định và bảo mật</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>SSL & Bảo Mật</h5>
+                        <p>Tăng độ tin cậy và bảo vệ dữ liệu website</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Sao Lưu Dữ Liệu</h5>
+                        <p>Backup định kỳ, giảm rủi ro mất dữ liệu</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Tư Vấn Triển Khai</h5>
+                        <p>Hỗ trợ chọn cấu hình phù hợp nhu cầu</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- VPS -->
+              <div class="nav-item dropdown mega-dropdown vps-mega-dropdown">
+                <a
+                  href="vps.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  onclick="window.location.href = 'vps.html'"
+                >
+                  VPS
+                </a>
+
+                <div class="dropdown-menu mega-menu vps-mega-menu m-0">
+                  <div class="row g-0">
+                    <div class="col-lg-6 mega-col">
+                      <h6 class="mega-title">VPS NỔI BẬT</h6>
+
+                      <a href="vps.html" class="mega-item">
+                        <h5>Cloud VPS AMD</h5>
+                        <p>Bộ xử lý AMD EPYC™</p>
+                      </a>
+
+                      <a href="vps.html" class="mega-item">
+                        <h5>Cloud VPS VM</h5>
+                        <p>Giá chỉ từ 42k/tháng</p>
+                      </a>
+
+                      <a href="vps.html" class="mega-item">
+                        <h5>Storage VPS</h5>
+                        <p>Lưu trữ dung lượng cao</p>
+                      </a>
+                    </div>
+
+                    <div class="col-lg-6 mega-col">
+                      <h6 class="mega-title">AI & GIẢI PHÁP</h6>
+
+                      <a href="vps.html" class="mega-item">
+                        <h5>VPS Giá Rẻ</h5>
+                        <p>Giá chỉ từ 75k/tháng</p>
+                      </a>
+
+                      <a href="vps.html" class="mega-item">
+                        <h5>VPS N8N AI</h5>
+                        <p>N8N Tool Integration</p>
+                      </a>
+
+                      <a href="vps.html" class="mega-item">
+                        <h5>OpenClaw AI</h5>
+                        <p>Trợ lý cá nhân chạy trên VPS</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <a href="contact.html" class="nav-item nav-link">LIÊN HỆ</a>
+            </div>
+
+            <button
+              type="button"
+              class="btn text-secondary ms-3"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+
+            <button
+              id="registerBtn"
+              type="button"
+              class="btn btn-danger py-2 px-4 ms-3"
+              data-bs-toggle="modal"
+              data-bs-target="#authModal"
+            >
+              <i class="fa fa-user-plus me-2"></i>Register
+            </button>
+
+            <div
+              id="userMenu"
+              class="dropdown user-dropdown ms-3"
+              style="display: none"
+            >
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="user-avatar" id="userAvatar">U</span>
+                <span id="userNameDisplay">User</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-user">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa fa-user-circle"></i> Hồ sơ</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="gohang.html"
+                    ><i class="fa fa-chart-line"></i> Giỏ hàng</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa fa-cog"></i> Cài đặt</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#" id="logoutBtn"
+                    ><i class="fa fa-sign-out-alt"></i> Đăng xuất</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <!-- Hero -->
+        <div class="container-xxl py-5 hero-proxy mb-5">
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row align-items-center g-5">
+              <div class="col-lg-7 text-center text-lg-start">
+                <span class="hero-badge wow fadeInUp" data-wow-delay="0.1s">
+                  Proxy tốc độ cao • IP sạch • Hỗ trợ 24/7
+                </span>
+                <h1
+                  class="display-4 text-white mb-4 wow fadeInUp"
+                  data-wow-delay="0.2s"
+                >
+                  Mua Proxy ổn định cho mọi nhu cầu sử dụng
+                </h1>
+                <p class="text-white mb-4 wow fadeInUp" data-wow-delay="0.3s">
+                  GreenProxy cung cấp Residential Proxy, Datacenter Proxy,
+                  Mobile Proxy, SOCKS5 Proxy và Rotating Proxy với tốc độ cao,
+                  dễ triển khai, phù hợp cho doanh nghiệp, cá nhân và đội ngũ kỹ
+                  thuật.
+                </p>
+                <div
+                  class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start wow fadeInUp"
+                  data-wow-delay="0.4s"
+                >
+                  <a
+                    href="#pricing"
+                    class="btn btn-light py-sm-3 px-sm-5 btn-round"
+                  >
+                    Xem bảng giá
+                  </a>
+                  <a
+                    href="#products"
+                    class="btn btn-outline-light py-sm-3 px-sm-5 btn-round"
+                  >
+                    Xem sản phẩm
+                  </a>
+                </div>
+              </div>
+              <div class="col-lg-5 wow zoomIn" data-wow-delay="0.5s">
+                <div class="bg-white rounded-4 shadow p-4">
+                  <h4 class="mb-3 text-center">Thông tin nhanh</h4>
+                  <div class="row g-3">
+                    <div class="col-6">
+                      <div class="number-box">
+                        <h2>10K+</h2>
+                        <p class="mb-0">IP khả dụng</p>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="number-box">
+                        <h2>120+</h2>
+                        <p class="mb-0">Quốc gia</p>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="number-box">
+                        <h2>99.9%</h2>
+                        <p class="mb-0">Uptime</p>
+                      </div>
+                    </div>
+                    <div class="col-6">
+                      <div class="number-box">
+                        <h2>24/7</h2>
+                        <p class="mb-0">Hỗ trợ</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Search Box -->
+      <div class="container px-lg-5">
+        <div class="proxy-search-box wow fadeInUp" data-wow-delay="0.1s">
+          <div class="row g-3 align-items-center">
+            <div class="col-lg-4">
+              <input
+                type="text"
+                class="form-control py-3"
+                placeholder="Tìm loại proxy bạn cần"
+              />
+            </div>
+            <div class="col-lg-3">
+              <select class="form-select py-3">
+                <option selected>Chọn khu vực</option>
+                <option>Việt Nam</option>
+                <option>Mỹ</option>
+                <option>Singapore</option>
+                <option>Nhật Bản</option>
+              </select>
+            </div>
+            <div class="col-lg-3">
+              <select class="form-select py-3">
+                <option selected>Chọn giao thức</option>
+                <option>HTTP</option>
+                <option>HTTPS</option>
+                <option>SOCKS5</option>
+              </select>
+            </div>
+            <div class="col-lg-2">
+              <button class="btn btn-primary w-100 py-3 btn-round">
+                Tìm ngay
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Products -->
+      <div class="container-xxl py-5" id="products">
+        <div class="container px-lg-5">
+          <div
+            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 700px"
+          >
+            <h1 class="mb-3">Các mặt hàng proxy nổi bật</h1>
+            <p class="mb-1">
+              Lựa chọn loại proxy phù hợp với nhu cầu truy cập, tự động hóa,
+              kiểm thử, phân tích dữ liệu hoặc vận hành hệ thống.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="proxy-card">
+                <span class="proxy-tag">Phổ biến</span>
+                <div class="proxy-icon"><i class="fa fa-home"></i></div>
+                <h4 class="mb-3">Residential Proxy</h4>
+                <p>
+                  Proxy dân cư với IP thật, mức độ tin cậy cao, phù hợp cho các
+                  tác vụ cần truy cập tự nhiên hơn.
+                </p>
+                <ul>
+                  <li><i class="fa fa-check"></i>IP dân cư chất lượng</li>
+                  <li><i class="fa fa-check"></i>Nhiều quốc gia</li>
+                  <li><i class="fa fa-check"></i>HTTP / HTTPS / SOCKS5</li>
+                  <li><i class="fa fa-check"></i>Xoay IP linh hoạt</li>
+                </ul>
+                <div
+                  class="mt-4 d-flex justify-content-between align-items-center"
+                >
+                  <h5 class="text-primary mb-0">Từ 149K/tháng</h5>
+                  <a href="#pricing" class="btn btn-outline-primary btn-round"
+                    >Xem giá</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="proxy-card">
+                <span class="proxy-tag">Tốc độ cao</span>
+                <div class="proxy-icon"><i class="fa fa-server"></i></div>
+                <h4 class="mb-3">Datacenter Proxy</h4>
+                <p>
+                  Proxy datacenter ổn định, tốc độ nhanh, phù hợp cho nhu cầu
+                  khối lượng lớn và tối ưu chi phí.
+                </p>
+                <ul>
+                  <li><i class="fa fa-check"></i>Hiệu suất cao</li>
+                  <li><i class="fa fa-check"></i>Chi phí hợp lý</li>
+                  <li><i class="fa fa-check"></i>IP tĩnh hoặc xoay</li>
+                  <li><i class="fa fa-check"></i>Phù hợp tác vụ lớn</li>
+                </ul>
+                <div
+                  class="mt-4 d-flex justify-content-between align-items-center"
+                >
+                  <h5 class="text-primary mb-0">Từ 79K/tháng</h5>
+                  <a href="#pricing" class="btn btn-outline-primary btn-round"
+                    >Xem giá</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="proxy-card">
+                <span class="proxy-tag">Linh hoạt</span>
+                <div class="proxy-icon"><i class="fa fa-signal"></i></div>
+                <h4 class="mb-3">Mobile Proxy</h4>
+                <p>
+                  Proxy 4G/5G với IP mobile, thích hợp cho các nhu cầu cần độ tự
+                  nhiên và thay đổi IP theo chu kỳ.
+                </p>
+                <ul>
+                  <li><i class="fa fa-check"></i>IP mạng di động</li>
+                  <li><i class="fa fa-check"></i>Xoay IP theo yêu cầu</li>
+                  <li><i class="fa fa-check"></i>Độ tin cậy cao</li>
+                  <li><i class="fa fa-check"></i>Hỗ trợ nhiều khu vực</li>
+                </ul>
+                <div
+                  class="mt-4 d-flex justify-content-between align-items-center"
+                >
+                  <h5 class="text-primary mb-0">Từ 299K/tháng</h5>
+                  <a href="#pricing" class="btn btn-outline-primary btn-round"
+                    >Xem giá</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="proxy-card">
+                <span class="proxy-tag">SOCKS5</span>
+                <div class="proxy-icon"><i class="fa fa-random"></i></div>
+                <h4 class="mb-3">SOCKS5 Proxy</h4>
+                <p>
+                  Tối ưu cho ứng dụng cần truyền tải ổn định và hỗ trợ tốt nhiều
+                  luồng kết nối.
+                </p>
+                <ul>
+                  <li><i class="fa fa-check"></i>Bảo mật tốt</li>
+                  <li><i class="fa fa-check"></i>Tương thích nhiều tool</li>
+                  <li><i class="fa fa-check"></i>Kết nối mượt</li>
+                  <li><i class="fa fa-check"></i>Dễ cấu hình</li>
+                </ul>
+                <div
+                  class="mt-4 d-flex justify-content-between align-items-center"
+                >
+                  <h5 class="text-primary mb-0">Từ 99K/tháng</h5>
+                  <a href="#pricing" class="btn btn-outline-primary btn-round"
+                    >Xem giá</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="proxy-card">
+                <span class="proxy-tag">Xoay IP</span>
+                <div class="proxy-icon"><i class="fa fa-sync-alt"></i></div>
+                <h4 class="mb-3">Rotating Proxy</h4>
+                <p>
+                  Tự động thay đổi IP theo thời gian hoặc theo request, phù hợp
+                  cho hệ thống cần phân phối truy cập.
+                </p>
+                <ul>
+                  <li><i class="fa fa-check"></i>Xoay IP tự động</li>
+                  <li><i class="fa fa-check"></i>Phân phối truy cập tốt</li>
+                  <li><i class="fa fa-check"></i>Giảm trùng lặp IP</li>
+                  <li><i class="fa fa-check"></i>Dễ tích hợp API</li>
+                </ul>
+                <div
+                  class="mt-4 d-flex justify-content-between align-items-center"
+                >
+                  <h5 class="text-primary mb-0">Từ 129K/tháng</h5>
+                  <a href="#pricing" class="btn btn-outline-primary btn-round"
+                    >Xem giá</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="proxy-card">
+                <span class="proxy-tag">IP cố định</span>
+                <div class="proxy-icon"><i class="fa fa-thumbtack"></i></div>
+                <h4 class="mb-3">Static Proxy</h4>
+                <p>
+                  Proxy IP tĩnh cho các tác vụ cần giữ địa chỉ truy cập ổn định
+                  trong thời gian dài.
+                </p>
+                <ul>
+                  <li><i class="fa fa-check"></i>IP cố định ổn định</li>
+                  <li>
+                    <i class="fa fa-check"></i>Thích hợp đăng nhập lâu dài
+                  </li>
+                  <li><i class="fa fa-check"></i>Truy cập nhất quán</li>
+                  <li><i class="fa fa-check"></i>Chi phí dễ kiểm soát</li>
+                </ul>
+                <div
+                  class="mt-4 d-flex justify-content-between align-items-center"
+                >
+                  <h5 class="text-primary mb-0">Từ 89K/tháng</h5>
+                  <a href="#pricing" class="btn btn-outline-primary btn-round"
+                    >Xem giá</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Features -->
+      <div class="container-xxl py-5 section-soft" id="features">
+        <div class="container px-lg-5">
+          <div
+            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 700px"
+          >
+            <h1 class="mb-3">Ưu điểm khi mua proxy tại GreenProxy</h1>
+            <p class="mb-1">
+              Tập trung vào độ ổn định, tốc độ, khả năng mở rộng và hỗ trợ thực
+              tế.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="feature-box text-center">
+                <i class="fa fa-tachometer-alt"></i>
+                <h5>Tốc độ cao</h5>
+                <p class="mb-0">
+                  Kết nối nhanh, độ trễ thấp, phù hợp nhiều tác vụ.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="feature-box text-center">
+                <i class="fa fa-shield-alt"></i>
+                <h5>Ổn định</h5>
+                <p class="mb-0">
+                  Hạ tầng được tối ưu để duy trì uptime cao và ít gián đoạn.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="feature-box text-center">
+                <i class="fa fa-globe-asia"></i>
+                <h5>Đa khu vực</h5>
+                <p class="mb-0">
+                  Lựa chọn IP theo nhiều quốc gia và vùng địa lý khác nhau.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+              <div class="feature-box text-center">
+                <i class="fa fa-headset"></i>
+                <h5>Hỗ trợ 24/7</h5>
+                <p class="mb-0">
+                  Đội ngũ hỗ trợ sẵn sàng giải đáp khi bạn cần.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pricing -->
+      <div class="container-xxl py-5" id="pricing">
+        <div class="container px-lg-5">
+          <div
+            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 700px"
+          >
+            <h1 class="mb-3">Bảng giá proxy</h1>
+            <p class="mb-1">
+              Chọn gói phù hợp theo quy mô sử dụng và nhu cầu vận hành.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="plan-card">
+                <div class="plan-header">
+                  <h4>Gói Cơ Bản</h4>
+                  <div class="price">99K <small>/ tháng</small></div>
+                  <p class="mt-2 mb-0">Phù hợp cá nhân hoặc nhu cầu nhỏ</p>
+                </div>
+                <div class="plan-body">
+                  <ul>
+                    <li><i class="fa fa-check"></i>50 Proxy/IP</li>
+                    <li><i class="fa fa-check"></i>HTTP / HTTPS</li>
+                    <li><i class="fa fa-check"></i>1 quốc gia</li>
+                    <li><i class="fa fa-check"></i>Hỗ trợ email</li>
+                    <li><i class="fa fa-check"></i>Gia hạn linh hoạt</li>
+                  </ul>
+                  <a
+                    href="gohang.html"
+                    class="btn btn-outline-primary w-100 btn-round"
+                  >
+                    Chọn gói
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="plan-card featured">
+                <div class="plan-header">
+                  <span class="proxy-tag">Khuyên dùng</span>
+                  <h4>Gói Nâng Cao</h4>
+                  <div class="price">249K <small>/ tháng</small></div>
+                  <p class="mt-2 mb-0">Phù hợp team nhỏ và doanh nghiệp vừa</p>
+                </div>
+                <div class="plan-body">
+                  <ul>
+                    <li><i class="fa fa-check"></i>200 Proxy/IP</li>
+                    <li><i class="fa fa-check"></i>HTTP / HTTPS / SOCKS5</li>
+                    <li><i class="fa fa-check"></i>5 quốc gia</li>
+                    <li><i class="fa fa-check"></i>Xoay IP cơ bản</li>
+                    <li><i class="fa fa-check"></i>Hỗ trợ ưu tiên</li>
+                  </ul>
+                  <a href="gohang.html" class="btn btn-primary w-100 btn-round">
+                    Chọn gói
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="plan-card">
+                <div class="plan-header">
+                  <h4>Gói Doanh Nghiệp</h4>
+                  <div class="price">599K <small>/ tháng</small></div>
+                  <p class="mt-2 mb-0">
+                    Cho hệ thống lớn và nhu cầu chuyên sâu
+                  </p>
+                </div>
+                <div class="plan-body">
+                  <ul>
+                    <li><i class="fa fa-check"></i>Không giới hạn mở rộng</li>
+                    <li>
+                      <i class="fa fa-check"></i>Residential / Mobile tùy chọn
+                    </li>
+                    <li><i class="fa fa-check"></i>Nhiều quốc gia</li>
+                    <li><i class="fa fa-check"></i>API xoay IP</li>
+                    <li><i class="fa fa-check"></i>Hỗ trợ kỹ thuật riêng</li>
+                  </ul>
+                  <a
+                    href="contact.html"
+                    class="btn btn-outline-primary w-100 btn-round"
+                  >
+                    Liên hệ báo giá
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Use cases -->
+      <div class="container-xxl py-5 section-soft">
+        <div class="container px-lg-5">
+          <div
+            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 700px"
+          >
+            <h1 class="mb-3">Proxy phù hợp cho những nhu cầu nào?</h1>
+            <p class="mb-1">
+              Một số nhóm sử dụng phổ biến mà khách hàng thường lựa chọn.
+            </p>
+          </div>
+          <div class="row g-4">
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="use-case-card">
+                <h5 class="mb-3">Kiểm thử & phát triển</h5>
+                <p class="mb-0">
+                  Kiểm tra truy cập theo vùng, thử nghiệm hệ thống và mô phỏng
+                  nhiều nguồn kết nối khác nhau.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="use-case-card">
+                <h5 class="mb-3">Phân tích dữ liệu</h5>
+                <p class="mb-0">
+                  Hỗ trợ truy cập dữ liệu công khai từ nhiều vị trí để phục vụ
+                  nghiên cứu và giám sát thị trường.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="use-case-card">
+                <h5 class="mb-3">Vận hành doanh nghiệp</h5>
+                <p class="mb-0">
+                  Quản lý truy cập, phân phối tác vụ và mở rộng hạ tầng theo quy
+                  mô sử dụng thực tế.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- FAQ -->
+      <div class="container-xxl py-5" id="faq">
+        <div class="container px-lg-5">
+          <div
+            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 700px"
+          >
+            <h1 class="mb-3">Câu hỏi thường gặp</h1>
+            <p class="mb-1">Một số thắc mắc phổ biến trước khi mua proxy.</p>
+          </div>
+          <div class="faq-wrap accordion" id="faqAccordion">
+            <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
+              <h2 class="accordion-header" id="faq1">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse1"
+                >
+                  Proxy là gì?
+                </button>
+              </h2>
+              <div
+                id="collapse1"
+                class="accordion-collapse collapse show"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Proxy là máy chủ trung gian giúp chuyển tiếp kết nối từ thiết
+                  bị của bạn đến website hoặc dịch vụ đích.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+              <h2 class="accordion-header" id="faq2">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse2"
+                >
+                  Nên chọn Residential hay Datacenter Proxy?
+                </button>
+              </h2>
+              <div
+                id="collapse2"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Residential phù hợp khi cần IP tự nhiên hơn. Datacenter phù
+                  hợp khi ưu tiên tốc độ và chi phí.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
+              <h2 class="accordion-header" id="faq3">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse3"
+                >
+                  Có hỗ trợ SOCKS5 không?
+                </button>
+              </h2>
+              <div
+                id="collapse3"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Có. GreenProxy hỗ trợ HTTP, HTTPS và SOCKS5 tùy theo từng gói
+                  dịch vụ.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+              <h2 class="accordion-header" id="faq4">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#collapse4"
+                >
+                  Sau khi mua có được hỗ trợ cài đặt không?
+                </button>
+              </h2>
+              <div
+                id="collapse4"
+                class="accordion-collapse collapse"
+                data-bs-parent="#faqAccordion"
+              >
+                <div class="accordion-body">
+                  Có. Đội ngũ hỗ trợ sẽ hướng dẫn cấu hình cơ bản và giải đáp
+                  các bước sử dụng cần thiết.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CTA -->
+      <div class="container-xxl py-5" id="contact">
+        <div class="container px-lg-5">
+          <div
+            class="cta-box text-center text-white wow fadeInUp"
+            data-wow-delay="0.1s"
+          >
+            <h2 class="mb-3 text-white">Sẵn sàng bắt đầu với GreenProxy?</h2>
+            <p class="mb-4">
+              Chọn gói proxy phù hợp ngay hôm nay hoặc liên hệ để được tư vấn
+              giải pháp theo nhu cầu.
+            </p>
+            <div
+              class="d-flex flex-column flex-sm-row gap-3 justify-content-center"
+            >
+              <a href="gohang.html" class="btn btn-light py-3 px-5 btn-round"
+                >Mua ngay</a
+              >
+              <a
+                href="contact.html"
+                class="btn btn-outline-light py-3 px-5 btn-round"
+                >Liên hệ tư vấn</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer -->
+      <div
+        class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <div class="container py-5 px-lg-5">
+          <div class="row gy-5 gx-4 pt-4">
+            <div class="col-lg-4 col-md-6">
+              <h5 class="fw-bold text-white mb-4">Về GreenProxy</h5>
+              <p>
+                GreenProxy cung cấp dịch vụ proxy ổn định, tốc độ cao, hỗ trợ
+                nhiều giao thức và khu vực truy cập.
+              </p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social me-2" href=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social me-2" href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social me-2" href=""
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+              <h5 class="fw-bold text-white mb-4">Danh mục dịch vụ</h5>
+              <a class="btn btn-link" href="">Residential Proxy</a>
+              <a class="btn btn-link" href="">Datacenter Proxy</a>
+              <a class="btn btn-link" href="">Mobile Proxy</a>
+              <a class="btn btn-link" href="">SOCKS5 Proxy</a>
+              <a class="btn btn-link" href="">Rotating Proxy</a>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <h5 class="fw-bold text-white mb-4">Nhận ưu đãi mới</h5>
+              <div class="position-relative footer-news-box">
+                <input
+                  class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Nhập email của bạn"
+                />
+                <button
+                  type="button"
+                  class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2 btn-round"
+                >
+                  Đăng ký
+                </button>
+              </div>
+              <div class="mt-4">
+                <p class="mb-2">
+                  <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York,
+                  USA
+                </p>
+                <p class="mb-2">
+                  <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+                </p>
+                <p class="mb-0">
+                  <i class="fa fa-envelope me-3"></i>support@greenproxy.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-lg-5">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">GreenProxy</a>, All
+                Right Reserved.
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href="proxy.html">Trang chủ</a> <a href="#faq">FAQ</a>
+                  <a href="#contact">Liên hệ</a> <a href="#pricing">Bảng giá</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+      </a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1848 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GreenHost - Web Hosting HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      /* Modal Login/Signup Styles */
+      .auth-modal .modal-content {
+        border-radius: 15px;
+        border: none;
+        overflow: hidden;
+      }
+      .auth-modal .modal-header {
+        background: linear-gradient(135deg, #007b5e 0%, #00a37a 100%);
+        color: white;
+        border-bottom: none;
+        padding: 25px 30px;
+      }
+      .auth-modal .modal-header .btn-close {
+        background-color: white;
+        border-radius: 50%;
+        opacity: 1;
+      }
+      .auth-modal .modal-body {
+        padding: 30px;
+      }
+      .auth-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #e9ecef;
+      }
+      .auth-tab {
+        flex: 1;
+        text-align: center;
+        padding: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: #6c757d;
+      }
+      .auth-tab.active {
+        color: #007b5e;
+        border-bottom: 3px solid #007b5e;
+        margin-bottom: -2px;
+      }
+      .auth-form {
+        display: none;
+      }
+      .auth-form.active {
+        display: block;
+      }
+      .auth-form .form-control {
+        border-radius: 10px;
+        padding: 12px 15px;
+        border: 1px solid #e9ecef;
+        background-color: #f8f9fa;
+      }
+      .auth-form .form-control:focus {
+        border-color: #007b5e;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 94, 0.25);
+      }
+      .auth-form .btn-auth {
+        background: linear-gradient(135deg, #007b5e 0%, #00a37a 100%);
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        width: 100%;
+        color: white;
+        transition: transform 0.2s ease;
+      }
+      .auth-form .btn-auth:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(135deg, #006b52 0%, #00916e 100%);
+      }
+      .forgot-password {
+        text-align: right;
+        margin-top: 10px;
+      }
+      .forgot-password a {
+        color: #007b5e;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .register-link,
+      .login-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .register-link a,
+      .login-link a {
+        color: #007b5e;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .error-message {
+        color: #dc3545;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+      .social-login {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .social-login p {
+        color: #6c757d;
+        margin-bottom: 15px;
+        position: relative;
+      }
+      .social-login p::before,
+      .social-login p::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 30%;
+        height: 1px;
+        background-color: #e9ecef;
+      }
+      .social-login p::before {
+        left: 0;
+      }
+      .social-login p::after {
+        right: 0;
+      }
+      .btn-social {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+      .btn-social.facebook {
+        background-color: #3b5998;
+        color: white;
+      }
+      .btn-social.google {
+        background-color: #db4437;
+        color: white;
+      }
+      .btn-social.twitter {
+        background-color: #1da1f2;
+        color: white;
+      }
+      .btn-social:hover {
+        transform: translateY(-3px);
+        opacity: 0.9;
+      }
+      /* User Dropdown Styles */
+      .user-dropdown {
+        position: relative;
+      }
+      .user-dropdown .dropdown-toggle {
+        background: linear-gradient(135deg, #007b5e 0%, #00a37a 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 8px 16px 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .user-dropdown .dropdown-toggle::after {
+        margin-left: 6px;
+      }
+      .user-dropdown .dropdown-toggle:hover {
+        background: linear-gradient(135deg, #006b52 0%, #00916e 100%);
+      }
+      .user-avatar {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .user-dropdown .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition:
+          visibility 0.15s ease,
+          opacity 0.15s ease,
+          margin-top 0.15s ease;
+        margin-top: 0;
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        min-width: 200px;
+        background: white;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        z-index: 1000;
+      }
+      .user-dropdown .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: 0;
+        right: 0;
+        height: 12px;
+        background: transparent;
+      }
+      .user-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 8px;
+      }
+      .user-dropdown .dropdown-menu:hover {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 8px;
+      }
+      .dropdown-menu-user .dropdown-item {
+        padding: 10px 20px;
+        font-size: 14px;
+        transition: background 0.2s ease;
+        color: #333;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-menu-user .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #007b5e;
+      }
+      .dropdown-menu-user .dropdown-item i {
+        width: 20px;
+        margin-right: 8px;
+        color: #007b5e;
+      }
+      .dropdown-menu-user .dropdown-divider {
+        margin: 5px 0;
+        border-top: 1px solid #e9ecef;
+      }
+      /* ===== SHARED MEGA MENU ===== */
+      .mega-dropdown,
+      .domain-mega-dropdown,
+      .vps-mega-dropdown {
+        position: static !important;
+      }
+
+      .mega-dropdown .mega-menu {
+        width: 900px;
+        max-width: 95vw;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+        padding: 22px 24px;
+        border: none;
+        border-radius: 0;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        top: 100% !important;
+        margin-top: -14px !important;
+      }
+
+      .domain-mega-menu {
+        width: 820px !important;
+      }
+
+      .vps-mega-menu {
+        width: 780px !important;
+      }
+
+      .mega-col {
+        padding: 0 20px;
+        border-right: 1px solid #e9ecef;
+      }
+
+      .mega-col:last-child {
+        border-right: none;
+      }
+
+      .mega-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .mega-item {
+        display: block;
+        text-decoration: none;
+        margin-bottom: 18px;
+      }
+
+      .mega-item h5 {
+        font-size: 16px;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 4px;
+        transition: color 0.2s ease;
+      }
+
+      .mega-item p {
+        font-size: 13px;
+        color: #888;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .mega-item:hover h5 {
+        color: #86c200;
+      }
+
+      .mega-item:hover p {
+        color: #666;
+      }
+
+      /* ===== HOSTING PAGE ===== */
+      .hosting-hero .breadcrumb {
+        margin-bottom: 0;
+      }
+
+      .hosting-hero .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.75);
+      }
+
+      .hosting-page-intro {
+        max-width: 760px;
+      }
+
+      .hosting-page-intro p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #6c757d;
+      }
+
+      .hosting-plan-card {
+        position: relative;
+        background: #fff;
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+        border: 1px solid #edf1f5;
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .hosting-plan-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .hosting-plan-card.popular {
+        border: 2px solid #86c200;
+      }
+
+      .hosting-badge {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: #86c200;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 6px 12px;
+        border-radius: 30px;
+        z-index: 2;
+      }
+
+      .hosting-icon-wrap {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        font-size: 22px;
+        color: #fff;
+      }
+
+      .hosting-icon-wrap.primary {
+        background: linear-gradient(135deg, #86c200 0%, #6ea100 100%);
+      }
+
+      .hosting-icon-wrap.secondary {
+        background: linear-gradient(135deg, #00a37a 0%, #007b5e 100%);
+      }
+
+      .hosting-card-top {
+        padding: 34px 24px 24px;
+        text-align: center;
+        border-bottom: 1px solid #edf1f5;
+      }
+
+      .hosting-card-top h4 {
+        margin-top: 16px;
+        margin-bottom: 10px;
+        font-weight: 700;
+      }
+
+      .hosting-card-top p {
+        color: #6c757d;
+        margin-bottom: 0;
+        min-height: 48px;
+      }
+
+      .hosting-price-box {
+        padding: 22px 24px;
+        text-align: center;
+        border-bottom: 1px solid #edf1f5;
+        background: #fcfdfb;
+      }
+
+      .hosting-price-note {
+        font-size: 14px;
+        color: #86c200;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .hosting-price {
+        font-size: 42px;
+        font-weight: 800;
+        color: #222;
+        line-height: 1;
+      }
+
+      .hosting-price small {
+        font-size: 15px;
+        color: #6c757d;
+        font-weight: 600;
+      }
+
+      .hosting-feature-list {
+        padding: 24px;
+      }
+
+      .hosting-feature-list p {
+        margin-bottom: 14px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid #f1f3f5;
+        color: #444;
+      }
+
+      .hosting-feature-list p:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+
+      .hosting-feature-list i {
+        color: #86c200;
+      }
+
+      .hosting-btn {
+        border-radius: 12px;
+        font-weight: 600;
+        padding: 11px 24px;
+      }
+
+      .hosting-info-strip {
+        margin-top: 34px;
+        background: linear-gradient(135deg, #f8fbf1 0%, #ffffff 100%);
+        border: 1px solid #e7efda;
+        border-radius: 20px;
+        padding: 24px;
+      }
+
+      .hosting-info-strip .info-item {
+        text-align: center;
+        padding: 12px;
+      }
+
+      .hosting-info-strip .info-item i {
+        font-size: 24px;
+        color: #86c200;
+        margin-bottom: 12px;
+      }
+
+      .hosting-info-strip .info-item h6 {
+        font-weight: 700;
+        margin-bottom: 6px;
+        color: #333;
+      }
+
+      .hosting-info-strip .info-item p {
+        font-size: 14px;
+        color: #6c757d;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .hosting-extra-section {
+        padding: 40px 0 10px;
+      }
+
+      .hosting-extra-box {
+        background: #fff;
+        border: 1px solid #edf1f5;
+        border-radius: 18px;
+        padding: 24px;
+        height: 100%;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+        transition: 0.25s ease;
+      }
+
+      .hosting-extra-box:hover {
+        transform: translateY(-6px);
+      }
+
+      .hosting-extra-box i {
+        font-size: 28px;
+        color: #86c200;
+        margin-bottom: 16px;
+      }
+
+      .hosting-extra-box h5 {
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .hosting-extra-box p {
+        color: #6c757d;
+        margin: 0;
+        line-height: 1.7;
+      }
+
+      .hosting-comparison-section .section-title p {
+        color: #6c757d;
+        line-height: 1.7;
+      }
+
+      .hosting-comparison-card {
+        background: #fff;
+        border: 1px solid #edf1f5;
+        border-radius: 20px;
+        padding: 28px;
+        height: 100%;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+      }
+
+      .hosting-comparison-card.shared {
+        border-top: 5px solid #86c200;
+      }
+
+      .hosting-comparison-card.dedicated {
+        border-top: 5px solid #00a37a;
+      }
+
+      .hosting-comparison-card h3 {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 24px;
+      }
+
+      .hosting-comparison-item {
+        margin-bottom: 20px;
+      }
+
+      .hosting-comparison-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .hosting-comparison-item i {
+        font-size: 22px;
+        margin-bottom: 10px;
+        color: #86c200;
+      }
+
+      .hosting-comparison-card.dedicated .hosting-comparison-item i {
+        color: #00a37a;
+      }
+
+      .hosting-comparison-item h6 {
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .hosting-comparison-item p {
+        margin: 0;
+        color: #6c757d;
+        line-height: 1.6;
+      }
+
+      .hosting-cta-box {
+        margin-top: 42px;
+        background: linear-gradient(135deg, #86c200 0%, #6ea100 100%);
+        color: #fff;
+        border-radius: 22px;
+        padding: 34px 28px;
+        text-align: center;
+        box-shadow: 0 18px 35px rgba(134, 194, 0, 0.25);
+      }
+
+      .hosting-cta-box h3 {
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .hosting-cta-box p {
+        color: rgba(255, 255, 255, 0.92);
+        max-width: 760px;
+        margin: 0 auto 20px;
+        line-height: 1.8;
+      }
+
+      .hosting-cta-box .btn {
+        border-radius: 12px;
+        font-weight: 700;
+        padding: 11px 24px;
+      }
+
+      @media (max-width: 991.98px) {
+        .mega-dropdown {
+          position: relative !important;
+        }
+
+        .mega-dropdown .mega-menu,
+        .domain-mega-menu,
+        .vps-mega-menu {
+          width: 100% !important;
+          left: 0 !important;
+          transform: none !important;
+          max-width: 100%;
+          padding: 15px;
+          margin-top: 0 !important;
+        }
+
+        .mega-col {
+          border-right: none;
+          padding: 0;
+          margin-bottom: 20px;
+        }
+
+        .hosting-card-top p {
+          min-height: auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-xxl position-relative p-0">
+        <nav
+          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+        >
+          <a href="" class="navbar-brand p-0">
+            <h1 class="m-0"><i class="fa fa-server me-3"></i>GreenHost</h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link">Trang chủ</a>
+              <a href="proxy.html" class="nav-item nav-link">Proxy</a>
+              <div class="nav-item dropdown mega-dropdown domain-mega-dropdown">
+                <a
+                  href="domain.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  onclick="window.location.href = 'domain.html'"
+                >
+                  Tên Miền
+                </a>
+
+                <div class="dropdown-menu mega-menu domain-mega-menu m-0">
+                  <div class="row g-0">
+                    <!-- Cột trái -->
+                    <div class="col-lg-6 mega-col">
+                      <h6 class="mega-title">TÊN MIỀN</h6>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Đăng Ký Tên Miền</h5>
+                        <p>Đừng kinh doanh khi chưa có tên miền</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Bảng Giá Tên Miền</h5>
+                        <p>Giá & thông tin các loại tên miền</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Chuyển Về P.A</h5>
+                        <p>Chuyển tên miền từ nơi khác về P.A Việt Nam</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Tìm Tên Miền</h5>
+                        <p>Khám phá thế giới tên miền</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Tên Miền Miễn Phí</h5>
+                        <p>Phù hợp mọi đối tượng, tiết kiệm chi phí</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Tên Miền Tự Do</h5>
+                        <p>Tên miền .VN hết hạn có thể đăng ký</p>
+                      </a>
+                    </div>
+
+                    <!-- Cột phải -->
+                    <div class="col-lg-6 mega-col">
+                      <h6 class="mega-title">DỊCH VỤ</h6>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Bảo Mật Tên Miền</h5>
+                        <p>Bảo vệ an toàn tuyệt đối</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Tiện Ích DNS</h5>
+                        <p>Công cụ cần thiết và thiết yếu</p>
+                      </a>
+
+                      <a href="domain.html" class="mega-item">
+                        <h5>Chuyển Nhượng Tên Miền</h5>
+                        <p>Giao dịch an toàn và nhanh chóng</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-item dropdown mega-dropdown">
+                <a
+                  href="hosting.html"
+                  class="nav-link dropdown-toggle active"
+                  data-bs-toggle="dropdown"
+                  onclick="window.location.href = 'hosting.html'"
+                >
+                  Web & Hosting
+                </a>
+
+                <div class="dropdown-menu mega-menu m-0">
+                  <div class="row g-0">
+                    <!-- Cột 1 -->
+                    <div class="col-lg-4 mega-col">
+                      <h6 class="mega-title">HOSTING</h6>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Web Hosting</h5>
+                        <p>Hosting chuyên nghiệp, hiệu suất vượt trội</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>WordPress</h5>
+                        <p>Thiết kế đặc biệt tối ưu tốc độ</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Enterprise Hosting</h5>
+                        <p>Chuẩn doanh nghiệp, tốc độ cao</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Nodejs</h5>
+                        <p>API RESTful, Microservices, IoT, Realtime Web App</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Python</h5>
+                        <p>Hỗ trợ Django, Flask, NumPy...</p>
+                      </a>
+                    </div>
+
+                    <!-- Cột 2 -->
+                    <div class="col-lg-4 mega-col">
+                      <h6 class="mega-title">SERVERS</h6>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Cloud Server</h5>
+                        <p>Hiệu suất cao, dễ dàng mở rộng</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Virtual Private Cloud</h5>
+                        <p>Tài nguyên riêng, ổn định cao</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Dedicated Server</h5>
+                        <p>Phần cứng mạnh, hiệu suất vượt trội</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Máy chủ Python</h5>
+                        <p>Quyền SSH cao, framework đầy đủ</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Co-Location</h5>
+                        <p>Thuê chỗ đặt máy chủ với chi phí tốt</p>
+                      </a>
+                    </div>
+
+                    <!-- Cột 3 -->
+                    <div class="col-lg-4 mega-col">
+                      <h6 class="mega-title">GIẢI PHÁP</h6>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Hosting Doanh Nghiệp</h5>
+                        <p>Phù hợp website công ty và hệ thống lớn</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Email Hosting</h5>
+                        <p>Email tên miền riêng, ổn định và bảo mật</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>SSL & Bảo Mật</h5>
+                        <p>Tăng độ tin cậy và bảo vệ dữ liệu website</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Sao Lưu Dữ Liệu</h5>
+                        <p>Backup định kỳ, giảm rủi ro mất dữ liệu</p>
+                      </a>
+
+                      <a href="hosting.html" class="mega-item">
+                        <h5>Tư Vấn Triển Khai</h5>
+                        <p>Hỗ trợ chọn cấu hình phù hợp nhu cầu</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="nav-item dropdown mega-dropdown vps-mega-dropdown">
+                <a
+                  href="vps.html"
+                  class="nav-link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  onclick="window.location.href = 'vps.html'"
+                >
+                  VPS
+                </a>
+
+                <div class="dropdown-menu mega-menu vps-mega-menu m-0">
+                  <div class="row g-0">
+                    <!-- Cột trái -->
+                    <div class="col-lg-6 mega-col">
+                      <h6 class="mega-title">VPS NỔI BẬT</h6>
+
+                      <a href="vps.html" class="mega-item has-badge">
+                        <h5>Cloud VPS AMD</h5>
+                        <p>Bộ xử lý AMD EPYC™</p>
+                      </a>
+
+                      <a href="vps.html" class="mega-item has-badge">
+                        <h5>Cloud VPS VM</h5>
+                        <p>Giá chỉ từ 42k/tháng</p>
+                      </a>
+
+                      <a href="vps.html" class="mega-item has-badge">
+                        <h5>Storage VPS</h5>
+                        <p>Lưu trữ dung lượng cao</p>
+                      </a>
+                    </div>
+
+                    <!-- Cột phải -->
+                    <div class="col-lg-6 mega-col">
+                      <h6 class="mega-title">AI & GIẢI PHÁP</h6>
+
+                      <a href="vps.html" class="mega-item has-badge">
+                        <h5>VPS Giá Rẻ</h5>
+                        <p>Giá chỉ từ 75k/tháng</p>
+                      </a>
+
+                      <a href="vps.html" class="mega-item has-badge">
+                        <h5>VPS N8N AI</h5>
+                        <p>N8N Tool Integration</p>
+                      </a>
+
+                      <a href="vps.html" class="mega-item has-badge">
+                        <h5>OpenClaw AI</h5>
+                        <p>Trợ lý cá nhân chạy trên VPS</p>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a href="contact.html" class="nav-item nav-link">Liên hệ</a>
+            </div>
+            <button
+              type="button"
+              class="btn text-secondary ms-3"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+            <button
+              id="registerBtn"
+              type="button"
+              class="btn btn-danger py-2 px-4 ms-3"
+              data-bs-toggle="modal"
+              data-bs-target="#authModal"
+            >
+              <i class="fa fa-user-plus me-2"></i>Register
+            </button>
+
+            <div
+              id="userMenu"
+              class="dropdown user-dropdown ms-3"
+              style="display: none"
+            >
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="user-avatar" id="userAvatar">U</span>
+                <span id="userNameDisplay">User</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-user">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa fa-user-circle"></i> My Profile</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="gohang.html"
+                    ><i class="fa fa-chart-line"></i> Giỏ hàng</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa fa-cog"></i> Settings</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#" id="logoutBtn"
+                    ><i class="fa fa-sign-out-alt"></i> Logout</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div
+          class="container-xxl py-5 bg-primary hero-header mb-5 hosting-hero"
+        >
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 pt-5">
+              <div class="col-12 text-center text-lg-start">
+                <h1 class="display-4 text-white animated slideInLeft">
+                  Dịch Vụ Hosting
+                </h1>
+                <p
+                  class="text-white mb-4 animated slideInLeft"
+                  style="max-width: 720px"
+                >
+                  Giải pháp lưu trữ website nhanh, ổn định và bảo mật cho cá
+                  nhân, doanh nghiệp nhỏ và hệ thống chuyên nghiệp.
+                </p>
+                <nav aria-label="breadcrumb">
+                  <ol
+                    class="breadcrumb justify-content-center justify-content-lg-start animated slideInLeft"
+                  >
+                    <li class="breadcrumb-item">
+                      <a class="text-white" href="index.html">Trang chủ</a>
+                    </li>
+                    <li
+                      class="breadcrumb-item text-white active"
+                      aria-current="page"
+                    >
+                      Hosting
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+      <!-- Login/Register Modal -->
+      <div
+        class="modal fade auth-modal"
+        id="authModal"
+        tabindex="-1"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        style="overflow-y: scroll"
+      >
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="authModalLabel">
+                <i class="fa fa-user-circle me-2"></i>Welcome to GreenHost
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="auth-tabs">
+                <button class="auth-tab active" data-form="login">Login</button>
+                <button class="auth-tab" data-form="register">Register</button>
+              </div>
+              <!-- Login Form -->
+              <div id="login-form" class="auth-form active">
+                <form id="loginForm">
+                  <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="loginEmail"
+                      placeholder="Enter your email"
+                      required
+                    />
+                    <div class="error-message" id="loginEmailError">
+                      Please enter a valid email
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="loginPassword"
+                      placeholder="Enter your password"
+                      required
+                    />
+                    <div class="error-message" id="loginPasswordError">
+                      Password is required
+                    </div>
+                  </div>
+                  <div class="forgot-password">
+                    <a
+                      href="#"
+                      onclick="
+                        alert('Password reset link sent to your email!');
+                        return false;
+                      "
+                      >Forgot Password?</a
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-auth mt-3"
+                    onclick="handleLogin()"
+                  >
+                    <i class="fa fa-sign-in-alt me-2"></i>Login
+                  </button>
+                  <div class="register-link">
+                    <p>
+                      Don't have an account?
+                      <a
+                        href="#"
+                        onclick="
+                          switchToRegister();
+                          return false;
+                        "
+                        >Register here</a
+                      >
+                    </p>
+                  </div>
+                </form>
+              </div>
+              <!-- Register Form -->
+              <div id="register-form" class="auth-form">
+                <form id="registerForm">
+                  <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="regName"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                    <div class="error-message" id="regNameError">
+                      Name is required
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="regEmail"
+                      placeholder="Enter your email"
+                      required
+                    />
+                    <div class="error-message" id="regEmailError">
+                      Please enter a valid email
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="regPassword"
+                      placeholder="Create a password (min 6 characters)"
+                      required
+                    />
+                    <div class="error-message" id="regPasswordError">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="regConfirmPassword"
+                      placeholder="Confirm your password"
+                      required
+                    />
+                    <div class="error-message" id="regConfirmError">
+                      Passwords do not match
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-auth mt-2"
+                    onclick="handleRegister()"
+                  >
+                    <i class="fa fa-user-plus me-2"></i>Create Account
+                  </button>
+                  <div class="login-link">
+                    <p>
+                      Already have an account?
+                      <a
+                        href="#"
+                        onclick="
+                          switchToLogin();
+                          return false;
+                        "
+                        >Login here</a
+                      >
+                    </p>
+                  </div>
+                </form>
+              </div>
+              <!-- Social Login -->
+              <div class="social-login">
+                <p>Or continue with</p>
+                <a
+                  href="#"
+                  class="btn-social facebook"
+                  onclick="
+                    alert('Facebook login coming soon!');
+                    return false;
+                  "
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  href="#"
+                  class="btn-social google"
+                  onclick="
+                    alert('Google login coming soon!');
+                    return false;
+                  "
+                  ><i class="fab fa-google"></i
+                ></a>
+                <a
+                  href="#"
+                  class="btn-social twitter"
+                  onclick="
+                    alert('Twitter login coming soon!');
+                    return false;
+                  "
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Modal -->
+      <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-center p-4">
+            <div class="modal-body">
+              <i
+                class="fa fa-check-circle text-success"
+                style="font-size: 70px"
+              ></i>
+              <h3 class="mt-3" id="successMessage">Login Successful!</h3>
+              <p id="successDetail">Welcome back to GreenHost!</p>
+              <button class="btn btn-primary mt-3" data-bs-dismiss="modal">
+                Continue
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Full Screen Search Start -->
+      <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content" style="background: rgba(29, 40, 51, 0.8)">
+            <div class="modal-header border-0">
+              <button
+                type="button"
+                class="btn bg-white btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="modal-body d-flex align-items-center justify-content-center"
+            >
+              <div class="input-group" style="max-width: 600px">
+                <input
+                  type="text"
+                  class="form-control bg-transparent border-light p-3"
+                  placeholder="Type search keyword"
+                />
+                <button class="btn btn-light px-4">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Full Screen Search End -->
+
+      <!-- Pricing Start -->
+      <div class="container-xxl py-5">
+        <div class="container px-lg-5">
+          <div
+            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp hosting-page-intro"
+            data-wow-delay="0.1s"
+          >
+            <h1 class="mb-3">Các Gói Hosting Nổi Bật</h1>
+            <p class="mb-0">
+              Lựa chọn gói hosting phù hợp theo quy mô website, mức lưu lượng
+              truy cập và nhu cầu mở rộng của bạn. Tất cả đều được tối ưu hiệu
+              suất, bảo mật và hỗ trợ kỹ thuật chuyên nghiệp.
+            </p>
+          </div>
+
+          <div class="row gy-4 gx-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+              <div class="hosting-plan-card">
+                <div class="hosting-card-top">
+                  <div class="hosting-icon-wrap primary">
+                    <i class="fa fa-share-alt"></i>
+                  </div>
+                  <h4>Hosting Dùng Chung</h4>
+                  <p>Phù hợp cho website cá nhân, blog và doanh nghiệp nhỏ.</p>
+                </div>
+
+                <div class="hosting-price-box">
+                  <div class="hosting-price-note">Ưu đãi tiết kiệm 30%</div>
+                  <div class="hosting-price">$2.49 <small>/ tháng</small></div>
+                  <a class="btn btn-primary hosting-btn mt-3" href="gohang.html"
+                    >Mua ngay</a
+                  >
+                </div>
+
+                <div class="hosting-feature-list">
+                  <p><i class="fa fa-check me-3"></i>100 GB Disk Space</p>
+                  <p><i class="fa fa-check me-3"></i>Unlimited Bandwidth</p>
+                  <p><i class="fa fa-check me-3"></i>Free SSL cơ bản</p>
+                  <p><i class="fa fa-check me-3"></i>Tự động quét Malware</p>
+                  <p><i class="fa fa-check me-3"></i>Hoàn tiền trong 30 ngày</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+              <div class="hosting-plan-card popular">
+                <div class="hosting-badge">Phổ biến</div>
+
+                <div class="hosting-card-top">
+                  <div class="hosting-icon-wrap secondary">
+                    <i class="fa fa-server"></i>
+                  </div>
+                  <h4>VPS Hosting</h4>
+                  <p>
+                    Mạnh mẽ hơn, linh hoạt hơn cho website tăng trưởng nhanh.
+                  </p>
+                </div>
+
+                <div class="hosting-price-box">
+                  <div class="hosting-price-note">
+                    Hiệu năng cao, tài nguyên riêng
+                  </div>
+                  <div class="hosting-price">$5.49 <small>/ tháng</small></div>
+                  <a class="btn btn-success hosting-btn mt-3" href="gohang.html"
+                    >Mua ngay</a
+                  >
+                </div>
+
+                <div class="hosting-feature-list">
+                  <p>
+                    <i class="fa fa-check me-3"></i>Tài nguyên riêng ổn định
+                  </p>
+                  <p>
+                    <i class="fa fa-check me-3"></i>Hiệu năng tốt cho website
+                    lớn
+                  </p>
+                  <p>
+                    <i class="fa fa-check me-3"></i>Toàn quyền cấu hình mở rộng
+                  </p>
+                  <p><i class="fa fa-check me-3"></i>Bảo mật nâng cao</p>
+                  <p><i class="fa fa-check me-3"></i>Hỗ trợ kỹ thuật 24/7</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+              <div class="hosting-plan-card">
+                <div class="hosting-card-top">
+                  <div class="hosting-icon-wrap primary">
+                    <i class="fa fa-cog"></i>
+                  </div>
+                  <h4>Hosting Chuyên Dụng</h4>
+                  <p>
+                    Dành cho hệ thống doanh nghiệp cần bảo mật và hiệu suất cao.
+                  </p>
+                </div>
+
+                <div class="hosting-price-box">
+                  <div class="hosting-price-note">Giải pháp chuyên nghiệp</div>
+                  <div class="hosting-price">$11.49 <small>/ tháng</small></div>
+                  <a class="btn btn-primary hosting-btn mt-3" href="gohang.html"
+                    >Mua ngay</a
+                  >
+                </div>
+
+                <div class="hosting-feature-list">
+                  <p><i class="fa fa-check me-3"></i>Tài nguyên cao cấp</p>
+                  <p><i class="fa fa-check me-3"></i>Độ ổn định vượt trội</p>
+                  <p><i class="fa fa-check me-3"></i>Tối ưu cho doanh nghiệp</p>
+                  <p><i class="fa fa-check me-3"></i>Khả năng mở rộng tốt</p>
+                  <p><i class="fa fa-check me-3"></i>Ưu tiên hỗ trợ kỹ thuật</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hosting-info-strip wow fadeInUp" data-wow-delay="0.7s">
+            <div class="row g-3">
+              <div class="col-md-3">
+                <div class="info-item">
+                  <i class="fa fa-bolt"></i>
+                  <h6>Tốc độ ổn định</h6>
+                  <p>Tối ưu tốc độ tải trang và hiệu năng xử lý website.</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="info-item">
+                  <i class="fa fa-lock"></i>
+                  <h6>Bảo mật tốt</h6>
+                  <p>
+                    Giảm thiểu rủi ro với SSL, quét mã độc và giám sát hệ thống.
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="info-item">
+                  <i class="fa fa-sync-alt"></i>
+                  <h6>Sao lưu định kỳ</h6>
+                  <p>Hỗ trợ backup dữ liệu giúp an tâm khi vận hành website.</p>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="info-item">
+                  <i class="fa fa-headset"></i>
+                  <h6>Hỗ trợ 24/7</h6>
+                  <p>Đội ngũ kỹ thuật luôn sẵn sàng hỗ trợ khi cần thiết.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Pricing End -->
+      <!-- Hosting Extra Start -->
+      <div class="container-xxl hosting-extra-section">
+        <div class="container px-lg-5">
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+              <div class="hosting-extra-box">
+                <i class="fa fa-rocket"></i>
+                <h5>Khởi tạo dễ dàng</h5>
+                <p>
+                  Thiết lập website nhanh chóng với giao diện quản trị đơn giản,
+                  phù hợp cho cả người mới bắt đầu và người đã có kinh nghiệm.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+              <div class="hosting-extra-box">
+                <i class="fa fa-shield-alt"></i>
+                <h5>Bảo vệ dữ liệu</h5>
+                <p>
+                  Hệ thống được tăng cường lớp bảo mật, hỗ trợ SSL và các công
+                  cụ theo dõi an toàn giúp website hoạt động tin cậy hơn.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+              <div class="hosting-extra-box">
+                <i class="fa fa-chart-line"></i>
+                <h5>Mở rộng linh hoạt</h5>
+                <p>
+                  Dễ dàng nâng cấp cấu hình khi lưu lượng truy cập tăng, giúp
+                  website phát triển ổn định theo từng giai đoạn.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Hosting Extra End -->
+      <!-- Comparison Start -->
+      <div class="container-xxl py-5 hosting-comparison-section">
+        <div class="container px-lg-5">
+          <div
+            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
+            data-wow-delay="0.1s"
+            style="max-width: 700px"
+          >
+            <h1 class="mb-3">So Sánh Giải Pháp Hosting</h1>
+            <p class="mb-0">
+              Mỗi loại hosting có thế mạnh riêng. Việc chọn đúng giải pháp sẽ
+              giúp bạn cân bằng giữa chi phí, hiệu năng và khả năng mở rộng lâu
+              dài.
+            </p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
+              <div class="hosting-comparison-card shared">
+                <h3>Máy chủ dùng chung</h3>
+
+                <div class="hosting-comparison-item">
+                  <i class="fa fa-wallet"></i>
+                  <h6>Chi phí thấp</h6>
+                  <p>
+                    Phù hợp với website nhỏ, blog cá nhân hoặc doanh nghiệp mới
+                    bắt đầu.
+                  </p>
+                </div>
+
+                <div class="hosting-comparison-item">
+                  <i class="fa fa-server"></i>
+                  <h6>Tài nguyên chia sẻ</h6>
+                  <p>
+                    Dùng chung hạ tầng với các website khác nên chi phí tốt hơn
+                    nhưng giới hạn hơn khi lưu lượng tăng mạnh.
+                  </p>
+                </div>
+
+                <div class="hosting-comparison-item">
+                  <i class="fa fa-cogs"></i>
+                  <h6>Dễ sử dụng</h6>
+                  <p>
+                    Quản lý đơn giản, không cần kiến thức kỹ thuật sâu để vận
+                    hành.
+                  </p>
+                </div>
+
+                <div class="hosting-comparison-item">
+                  <i class="fa fa-headset"></i>
+                  <h6>Hỗ trợ đầy đủ</h6>
+                  <p>
+                    Thích hợp cho người cần triển khai nhanh và có đội ngũ hỗ
+                    trợ đồng hành.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.4s">
+              <div class="hosting-comparison-card dedicated">
+                <h3>Máy chủ chuyên dụng</h3>
+
+                <div class="hosting-comparison-item">
+                  <i class="fa fa-tachometer-alt"></i>
+                  <h6>Hiệu năng cao</h6>
+                  <p>
+                    Tài nguyên mạnh hơn, phù hợp với hệ thống doanh nghiệp và
+                    website có lưu lượng truy cập lớn.
+                  </p>
+                </div>
+
+                <div class="hosting-comparison-item">
+                  <i class="fa fa-user-shield"></i>
+                  <h6>Bảo mật tốt hơn</h6>
+                  <p>
+                    Môi trường riêng giúp kiểm soát tốt hơn về quyền truy cập và
+                    cấu hình.
+                  </p>
+                </div>
+
+                <div class="hosting-comparison-item">
+                  <i class="fa fa-expand-arrows-alt"></i>
+                  <h6>Mở rộng linh hoạt</h6>
+                  <p>
+                    Dễ nâng cấp cho nhu cầu vận hành phức tạp hoặc tăng trưởng
+                    dài hạn.
+                  </p>
+                </div>
+
+                <div class="hosting-comparison-item">
+                  <i class="fa fa-briefcase"></i>
+                  <h6>Phù hợp doanh nghiệp</h6>
+                  <p>
+                    Lý tưởng cho hệ thống cần hiệu suất ổn định, tải lớn và độ
+                    tin cậy cao.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hosting-cta-box wow fadeInUp" data-wow-delay="0.6s">
+            <h3>Chưa biết nên chọn gói nào?</h3>
+            <p>
+              Hãy bắt đầu với gói phù hợp nhu cầu hiện tại, sau đó nâng cấp khi
+              website phát triển. Nếu cần, GreenHost sẽ hỗ trợ bạn chọn cấu hình
+              hợp lý nhất.
+            </p>
+            <a href="contact.html" class="btn btn-light me-2">Liên hệ tư vấn</a>
+            <a href="gohang.html" class="btn btn-outline-light">Mua ngay</a>
+          </div>
+        </div>
+      </div>
+      <!-- Comparison End -->
+
+      <!-- Footer Start -->
+      <div
+        class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <div class="container py-5 px-lg-5">
+          <div class="row gy-5 gx-4 pt-5">
+            <div class="col-12">
+              <h5 class="fw-bold text-white mb-4">Đăng ký nhận bản tin</h5>
+              <div class="position-relative" style="max-width: 400px">
+                <input
+                  class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Nhập email của bạn"
+                />
+                <button
+                  type="button"
+                  class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-12">
+              <div class="row gy-5 g-4">
+                <div class="col-md-6">
+                  <h5 class="fw-bold text-white mb-4">Về Chúng Tôi</h5>
+                  <a class="btn btn-link" href="">Giới Thiệu</a>
+                  <a class="btn btn-link" href="">Liên Hệ</a>
+                  <a class="btn btn-link" href="">Chính Sách Bảo Mật</a>
+                  <a class="btn btn-link" href="">Điều Khoản</a>
+                  <a class="btn btn-link" href="">Hỗ Trợ</a>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="fw-bold text-white mb-4">Dịch Vụ</h5>
+                  <a class="btn btn-link" href="">Đăng Kí Tên Miền</a>
+                  <a class="btn btn-link" href="">Hosting Dùng Chung</a>
+                  <a class="btn btn-link" href="">VPS Hosting</a>
+                  <a class="btn btn-link" href="">Hosting Chuyên Dụng</a>
+                  <a class="btn btn-link" href="">Reseller Hosting</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <h5 class="fw-bold text-white mb-4">Liên Hệ</h5>
+              <p class="mb-2">
+                <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York,
+                USA
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i>loidh.24th@sv.dla.edu.vn
+              </p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-lg-n5">
+              <div class="bg-light rounded" style="padding: 30px">
+                <input
+                  type="text"
+                  class="form-control border-0 py-2 mb-2"
+                  placeholder="Họ & Tên"
+                />
+                <input
+                  type="email"
+                  class="form-control border-0 py-2 mb-2"
+                  placeholder="Email"
+                />
+                <textarea
+                  class="form-control border-0 mb-2"
+                  rows="2"
+                  placeholder="Lời Nhắn"
+                ></textarea>
+                <button class="btn btn-primary w-100 py-2">Gửi Tin Nhắn</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-lg-5">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">Your Site Name</a>, All
+                Right Reserved.
+
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Designed By
+                <a class="border-bottom" href="https://htmlcodex.com"
+                  >HTML Codex</a
+                >
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href="">Trang chủ</a>
+                  <a href="">Cookies</a>
+                  <a href=""> Trợ giúp</a>
+                  <a href="">FQAs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries - DÙNG CHUNG CHO TẤT CẢ FILE -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      let users = JSON.parse(localStorage.getItem("greenhost_users") || "[]");
+      let currentUser = JSON.parse(
+        localStorage.getItem("greenhost_current_user") || "null",
+      );
+
+      function showForm(type) {
+        document
+          .querySelectorAll(".auth-form")
+          .forEach((f) => f.classList.remove("active"));
+        document.getElementById(type + "-form").classList.add("active");
+      }
+
+      function updateUI() {
+        let registerBtn = document.getElementById("registerBtn");
+        let userMenu = document.getElementById("userMenu");
+        let userName = document.getElementById("userNameDisplay");
+        let userAvatar = document.getElementById("userAvatar");
+
+        if (currentUser && currentUser.name) {
+          if (registerBtn) registerBtn.style.display = "none";
+          if (userMenu) userMenu.style.display = "inline-block";
+          if (userName) userName.innerText = currentUser.name;
+          if (userAvatar)
+            userAvatar.innerText = currentUser.name.charAt(0).toUpperCase();
+        } else {
+          if (registerBtn) registerBtn.style.display = "inline-block";
+          if (userMenu) userMenu.style.display = "none";
+        }
+      }
+
+      function handleLogin() {
+        let email = document.getElementById("loginEmail").value;
+        let pwd = document.getElementById("loginPassword").value;
+        let user = users.find((u) => u.email === email && u.password === pwd);
+
+        if (user) {
+          currentUser = user;
+          localStorage.setItem("greenhost_current_user", JSON.stringify(user));
+          updateUI();
+          let modalEl = document.getElementById("authModal");
+          let modal = bootstrap.Modal.getInstance(modalEl);
+          if (modal) modal.hide();
+          alert("Đăng nhập thành công! Chào " + user.name);
+          location.reload();
+        } else {
+          alert("Sai email hoặc mật khẩu!");
+        }
+      }
+
+      function handleRegister() {
+        let name = document.getElementById("regName").value;
+        let email = document.getElementById("regEmail").value;
+        let pwd = document.getElementById("regPassword").value;
+        let confirm = document.getElementById("regConfirmPassword").value;
+
+        if (!name || !email) return alert("Vui lòng nhập đầy đủ!");
+        if (pwd.length < 6) return alert("Mật khẩu tối thiểu 6 ký tự!");
+        if (pwd !== confirm) return alert("Mật khẩu không khớp!");
+        if (users.find((u) => u.email === email))
+          return alert("Email đã tồn tại!");
+
+        users.push({ name, email, password: pwd });
+        localStorage.setItem("greenhost_users", JSON.stringify(users));
+        let modalEl = document.getElementById("authModal");
+        let modal = bootstrap.Modal.getInstance(modalEl);
+        if (modal) modal.hide();
+        alert("Đăng ký thành công! Vui lòng đăng nhập.");
+        showForm("login");
+      }
+
+      document
+        .getElementById("logoutBtn")
+        ?.addEventListener("click", function (e) {
+          e.preventDefault();
+          currentUser = null;
+          localStorage.removeItem("greenhost_current_user");
+          updateUI();
+          alert("Đã đăng xuất!");
+          location.reload();
+        });
+
+      // Tab switching
+      document.querySelectorAll(".auth-tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          let type = this.getAttribute("data-form");
+          document
+            .querySelectorAll(".auth-tab")
+            .forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+          document
+            .querySelectorAll(".auth-form")
+            .forEach((f) => f.classList.remove("active"));
+          document.getElementById(type + "-form").classList.add("active");
+        });
+      });
+
+      window.switchToRegister = () =>
+        document.querySelector('.auth-tab[data-form="register"]')?.click();
+      window.switchToLogin = () =>
+        document.querySelector('.auth-tab[data-form="login"]')?.click();
+
+      updateUI();
+    </script>
+  </body>
+</html>

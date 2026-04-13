@@ -1,0 +1,1332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>GreenHost - Web Hosting HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      /* Modal Login/Signup Styles */
+      .auth-modal .modal-content {
+        border-radius: 15px;
+        border: none;
+        overflow: hidden;
+      }
+      .auth-modal .modal-header {
+        background: linear-gradient(135deg, #007b5e 0%, #00a37a 100%);
+        color: white;
+        border-bottom: none;
+        padding: 25px 30px;
+      }
+      .auth-modal .modal-header .btn-close {
+        background-color: white;
+        border-radius: 50%;
+        opacity: 1;
+      }
+      .auth-modal .modal-body {
+        padding: 30px;
+      }
+      .auth-tabs {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #e9ecef;
+      }
+      .auth-tab {
+        flex: 1;
+        text-align: center;
+        padding: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: #6c757d;
+      }
+      .auth-tab.active {
+        color: #007b5e;
+        border-bottom: 3px solid #007b5e;
+        margin-bottom: -2px;
+      }
+      .auth-form {
+        display: none;
+      }
+      .auth-form.active {
+        display: block;
+      }
+      .auth-form .form-control {
+        border-radius: 10px;
+        padding: 12px 15px;
+        border: 1px solid #e9ecef;
+        background-color: #f8f9fa;
+      }
+      .auth-form .form-control:focus {
+        border-color: #007b5e;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 94, 0.25);
+      }
+      .auth-form .btn-auth {
+        background: linear-gradient(135deg, #007b5e 0%, #00a37a 100%);
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        width: 100%;
+        color: white;
+        transition: transform 0.2s ease;
+      }
+      .auth-form .btn-auth:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(135deg, #006b52 0%, #00916e 100%);
+      }
+      .forgot-password {
+        text-align: right;
+        margin-top: 10px;
+      }
+      .forgot-password a {
+        color: #007b5e;
+        text-decoration: none;
+        font-size: 14px;
+      }
+      .register-link,
+      .login-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+      .register-link a,
+      .login-link a {
+        color: #007b5e;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .error-message {
+        color: #dc3545;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+      .social-login {
+        margin-top: 20px;
+        text-align: center;
+      }
+      .social-login p {
+        color: #6c757d;
+        margin-bottom: 15px;
+        position: relative;
+      }
+      .social-login p::before,
+      .social-login p::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 30%;
+        height: 1px;
+        background-color: #e9ecef;
+      }
+      .social-login p::before {
+        left: 0;
+      }
+      .social-login p::after {
+        right: 0;
+      }
+      .btn-social {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+      .btn-social.facebook {
+        background-color: #3b5998;
+        color: white;
+      }
+      .btn-social.google {
+        background-color: #db4437;
+        color: white;
+      }
+      .btn-social.twitter {
+        background-color: #1da1f2;
+        color: white;
+      }
+      .btn-social:hover {
+        transform: translateY(-3px);
+        opacity: 0.9;
+      }
+
+      /* User Dropdown Styles */
+      .user-dropdown {
+        position: relative;
+      }
+      .user-dropdown .dropdown-toggle {
+        background: linear-gradient(135deg, #007b5e 0%, #00a37a 100%);
+        border: none;
+        border-radius: 50px;
+        padding: 8px 16px 8px 12px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: white;
+        font-weight: 500;
+        cursor: pointer;
+      }
+      .user-dropdown .dropdown-toggle::after {
+        margin-left: 6px;
+      }
+      .user-dropdown .dropdown-toggle:hover {
+        background: linear-gradient(135deg, #006b52 0%, #00916e 100%);
+      }
+      .user-avatar {
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+      .user-dropdown .dropdown-menu {
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition:
+          visibility 0.15s ease,
+          opacity 0.15s ease,
+          margin-top 0.15s ease;
+        margin-top: 0;
+        border-radius: 12px;
+        border: none;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+        min-width: 200px;
+        background: white;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        z-index: 1000;
+      }
+      .user-dropdown .dropdown-menu::before {
+        content: "";
+        position: absolute;
+        top: -12px;
+        left: 0;
+        right: 0;
+        height: 12px;
+        background: transparent;
+      }
+      .user-dropdown:hover .dropdown-menu {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 8px;
+      }
+      .user-dropdown .dropdown-menu:hover {
+        visibility: visible;
+        opacity: 1;
+        margin-top: 8px;
+      }
+      .user-dropdown .dropdown-menu.show,
+      .user-dropdown .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+        visibility: visible !important;
+        opacity: 1 !important;
+        margin-top: 8px !important;
+      }
+      .dropdown-menu-user .dropdown-item {
+        padding: 10px 20px;
+        font-size: 14px;
+        transition: background 0.2s ease;
+        color: #333;
+        text-decoration: none;
+        display: block;
+      }
+      .dropdown-menu-user .dropdown-item:hover {
+        background-color: #f8f9fa;
+        color: #007b5e;
+      }
+      .dropdown-menu-user .dropdown-item i {
+        width: 20px;
+        margin-right: 8px;
+        color: #007b5e;
+      }
+      .dropdown-menu-user .dropdown-divider {
+        margin: 5px 0;
+        border-top: 1px solid #e9ecef;
+      }
+
+      /* Cart Styles */
+      .cart-item {
+        border-bottom: 1px solid #e9ecef;
+        padding: 15px 0;
+      }
+      .cart-item:last-child {
+        border-bottom: none;
+      }
+      .cart-summary {
+        background: #f8f9fa;
+        border-radius: 15px;
+        padding: 25px;
+      }
+      .btn-checkout {
+        background: linear-gradient(135deg, #007b5e 0%, #00a37a 100%);
+        border: none;
+        border-radius: 10px;
+        padding: 15px;
+        font-weight: 600;
+        font-size: 18px;
+        width: 100%;
+        color: white;
+        transition: transform 0.2s ease;
+      }
+      .btn-checkout:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(135deg, #006b52 0%, #00916e 100%);
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-xxl bg-white p-0">
+      <!-- Spinner Start -->
+      <div
+        id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          style="width: 3rem; height: 3rem"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <!-- Spinner End -->
+
+      <!-- Navbar & Hero Start -->
+      <div class="container-xxl position-relative p-0">
+        <nav
+          class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0"
+        >
+          <a href="index.html" class="navbar-brand p-0">
+            <h1 class="m-0"><i class="fa fa-server me-3"></i>GreenHost</h1>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0">
+              <a href="index.html" class="nav-item nav-link">Trang Chủ</a>
+              <a href="about.html" class="nav-item nav-link">Giới Thiệu</a>
+              <a href="domain.html" class="nav-item nav-link">Tên Miền</a>
+              <a href="hosting.html" class="nav-item nav-link">Hosting</a>
+              <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+            </div>
+            <button
+              type="button"
+              class="btn text-secondary ms-3"
+              data-bs-toggle="modal"
+              data-bs-target="#searchModal"
+            >
+              <i class="fa fa-search"></i>
+            </button>
+            <button
+              id="registerBtn"
+              type="button"
+              class="btn btn-danger py-2 px-4 ms-3"
+              data-bs-toggle="modal"
+              data-bs-target="#authModal"
+            >
+              <i class="fa fa-user-plus me-2"></i>Register
+            </button>
+            <div
+              id="userMenu"
+              class="dropdown user-dropdown ms-3"
+              style="display: none"
+            >
+              <button
+                class="btn dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <span class="user-avatar" id="userAvatar">U</span>
+                <span id="userNameDisplay">User</span>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-user">
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa fa-user-circle"></i> My Profile</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa fa-chart-line"></i> Dashboard</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#"
+                    ><i class="fa fa-cog"></i> Settings</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#" id="logoutBtn"
+                    ><i class="fa fa-sign-out-alt"></i> Logout</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container-xxl py-5 bg-primary hero-header mb-5">
+          <div class="container my-5 py-5 px-lg-5">
+            <div class="row g-5 pt-5">
+              <div class="col-12 text-center text-lg-start">
+                <h1 class="display-4 text-white animated slideInLeft">
+                  Giỏ Hàng
+                </h1>
+                <nav aria-label="breadcrumb">
+                  <ol
+                    class="breadcrumb justify-content-center justify-content-lg-start animated slideInLeft"
+                  >
+                    <li class="breadcrumb-item">
+                      <a class="text-white" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a class="text-white" href="hosting.html">Hosting</a>
+                    </li>
+                    <li
+                      class="breadcrumb-item text-white active"
+                      aria-current="page"
+                    >
+                      Giỏ Hàng
+                    </li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Navbar & Hero End -->
+
+      <!-- Full Screen Search Start -->
+      <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content" style="background: rgba(29, 40, 51, 0.8)">
+            <div class="modal-header border-0">
+              <button
+                type="button"
+                class="btn bg-white btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="modal-body d-flex align-items-center justify-content-center"
+            >
+              <div class="input-group" style="max-width: 600px">
+                <input
+                  type="text"
+                  class="form-control bg-transparent border-light p-3"
+                  placeholder="Tìm kiếm dịch vụ..."
+                />
+                <button class="btn btn-light px-4">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Full Screen Search End -->
+
+      <!-- Login/Register Modal -->
+      <div
+        class="modal fade auth-modal"
+        id="authModal"
+        tabindex="-1"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        style="overflow-y: scroll"
+      >
+        <div
+          class="modal-dialog modal-dialog-centered"
+          style="
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - 1rem);
+          "
+        >
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">
+                <i class="fa fa-user-circle me-2"></i>Welcome to GreenHost
+              </h3>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="auth-tabs">
+                <button class="auth-tab active" data-form="login">Login</button>
+                <button class="auth-tab" data-form="register">Register</button>
+              </div>
+
+              <!-- Login Form -->
+              <div id="login-form" class="auth-form active">
+                <form id="loginForm">
+                  <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="loginEmail"
+                      placeholder="Enter your email"
+                      required
+                    />
+                    <div class="error-message" id="loginEmailError">
+                      Please enter a valid email
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="loginPassword"
+                      placeholder="Enter your password"
+                      required
+                    />
+                    <div class="error-message" id="loginPasswordError">
+                      Password is required
+                    </div>
+                  </div>
+                  <div class="forgot-password">
+                    <a
+                      href="#"
+                      onclick="
+                        alert('Password reset link sent!');
+                        return false;
+                      "
+                      >Forgot Password?</a
+                    >
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-auth mt-3"
+                    onclick="handleLogin()"
+                  >
+                    <i class="fa fa-sign-in-alt me-2"></i>Login
+                  </button>
+                  <div class="register-link">
+                    <p>
+                      Don't have an account?
+                      <a
+                        href="#"
+                        onclick="
+                          switchToRegister();
+                          return false;
+                        "
+                        >Register here</a
+                      >
+                    </p>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Register Form -->
+              <div id="register-form" class="auth-form">
+                <form id="registerForm">
+                  <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="regName"
+                      placeholder="Enter your full name"
+                      required
+                    />
+                    <div class="error-message" id="regNameError">
+                      Name is required
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="regEmail"
+                      placeholder="Enter your email"
+                      required
+                    />
+                    <div class="error-message" id="regEmailError">
+                      Please enter a valid email
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="regPassword"
+                      placeholder="Create a password (min 6 characters)"
+                      required
+                    />
+                    <div class="error-message" id="regPasswordError">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">Confirm Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="regConfirmPassword"
+                      placeholder="Confirm your password"
+                      required
+                    />
+                    <div class="error-message" id="regConfirmError">
+                      Passwords do not match
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn-auth mt-2"
+                    onclick="handleRegister()"
+                  >
+                    <i class="fa fa-user-plus me-2"></i>Create Account
+                  </button>
+                  <div class="login-link">
+                    <p>
+                      Already have an account?
+                      <a
+                        href="#"
+                        onclick="
+                          switchToLogin();
+                          return false;
+                        "
+                        >Login here</a
+                      >
+                    </p>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Social Login -->
+              <div class="social-login">
+                <p>Or continue with</p>
+                <a
+                  href="#"
+                  class="btn-social facebook"
+                  onclick="
+                    alert('Coming soon!');
+                    return false;
+                  "
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a
+                  href="#"
+                  class="btn-social google"
+                  onclick="
+                    alert('Coming soon!');
+                    return false;
+                  "
+                  ><i class="fab fa-google"></i
+                ></a>
+                <a
+                  href="#"
+                  class="btn-social twitter"
+                  onclick="
+                    alert('Coming soon!');
+                    return false;
+                  "
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Success Modal -->
+      <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content text-center p-4">
+            <div class="modal-body">
+              <i
+                class="fa fa-check-circle text-success"
+                style="font-size: 70px"
+              ></i>
+              <h3 class="mt-3" id="successMessage">Thành công!</h3>
+              <p id="successDetail"></p>
+              <button class="btn btn-primary mt-3" data-bs-dismiss="modal">
+                Đóng
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cart Start -->
+      <div class="container-xxl py-5">
+        <div class="container px-lg-5">
+          <div class="row g-5">
+            <!-- Cart Items -->
+            <div class="col-lg-8">
+              <div class="section-title position-relative mx-auto mb-4 pb-4">
+                <h3 class="fw-bold mb-0">Dịch Vụ Đã Chọn</h3>
+              </div>
+
+              <div class="cart-item d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <i class="fa fa-share-alt fa-3x text-primary"></i>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <h5 class="fw-bold">Shared Hosting - Gói Cơ Bản</h5>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>100 GB Disk
+                    Space
+                  </p>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>Unlimited
+                    Bandwith
+                  </p>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>Free SSL
+                    Certificate
+                  </p>
+                </div>
+                <div class="text-end">
+                  <h5 class="fw-bold text-primary">$2.49</h5>
+                  <small class="text-muted">/ tháng</small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-sm btn-outline-danger"
+                      onclick="removeItem(this)"
+                    >
+                      <i class="fa fa-trash"></i> Xóa
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cart-item d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <i class="fa fa-server fa-3x text-secondary"></i>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <h5 class="fw-bold">VPS Hosting - Gói Doanh Nghiệp</h5>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>4 CPU Cores
+                  </p>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>8 GB RAM
+                  </p>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>200 GB SSD
+                  </p>
+                </div>
+                <div class="text-end">
+                  <h5 class="fw-bold text-primary">$5.49</h5>
+                  <small class="text-muted">/ tháng</small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-sm btn-outline-danger"
+                      onclick="removeItem(this)"
+                    >
+                      <i class="fa fa-trash"></i> Xóa
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cart-item d-flex align-items-center">
+                <div class="flex-shrink-0">
+                  <i class="fa fa-server fa-3x text-secondary"></i>
+                </div>
+                <div class="flex-grow-1 ms-4">
+                  <h5 class="fw-bold">VPS Hosting - Gói Doanh Nghiệp</h5>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>4 CPU Cores
+                  </p>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>8 GB RAM
+                  </p>
+                  <p class="mb-1 text-muted">
+                    <i class="fa fa-check text-primary me-2"></i>200 GB SSD
+                  </p>
+                </div>
+                <div class="text-end">
+                  <h5 class="fw-bold text-primary">$5.49</h5>
+                  <small class="text-muted">/ tháng</small>
+                  <div class="mt-2">
+                    <button
+                      class="btn btn-sm btn-outline-danger"
+                      onclick="removeItem(this)"
+                    >
+                      <i class="fa fa-trash"></i> Xóa
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="col-lg-4">
+              <div class="cart-summary">
+                <h4 class="fw-bold mb-4">Tổng Đơn Hàng</h4>
+
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Tạm tính:</span>
+                  <span id="subtotal">$7.98</span>
+                </div>
+                <div class="d-flex justify-content-between mb-2">
+                  <span>Thuế VAT (10%):</span>
+                  <span id="tax">$0.80</span>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between mb-3">
+                  <span class="fw-bold">Tổng cộng:</span>
+                  <span class="fw-bold text-primary" id="total">$8.78</span>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label">Mã giảm giá</label>
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Nhập mã"
+                      id="couponCode"
+                    />
+                    <button
+                      class="btn btn-outline-primary"
+                      onclick="applyCoupon()"
+                    >
+                      Áp dụng
+                    </button>
+                  </div>
+                </div>
+
+                <button class="btn-checkout" onclick="checkout()">
+                  <i class="fa fa-lock me-2"></i>Thanh Toán
+                </button>
+
+                <p class="text-muted small text-center mt-3">
+                  <i class="fa fa-shield-alt me-1"></i> Thanh toán an toàn qua
+                  SSL
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cart End -->
+
+      <!-- Footer Start -->
+      <div
+        class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn"
+        data-wow-delay="0.1s"
+      >
+        <div class="container py-5 px-lg-5">
+          <div class="row gy-5 gx-4 pt-5">
+            <div class="col-12">
+              <h5 class="fw-bold text-white mb-4">Đăng ký nhận bản tin</h5>
+              <div class="position-relative" style="max-width: 400px">
+                <input
+                  class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
+                  type="text"
+                  placeholder="Nhập email của bạn"
+                />
+                <button
+                  type="button"
+                  class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2"
+                >
+                  Đăng ký
+                </button>
+              </div>
+            </div>
+            <div class="col-lg-5 col-md-12">
+              <div class="row gy-5 g-4">
+                <div class="col-md-6">
+                  <h5 class="fw-bold text-white mb-4">Về Chúng Tôi</h5>
+                  <a class="btn btn-link" href="">Giới Thiệu</a>
+                  <a class="btn btn-link" href="">Liên Hệ</a>
+                  <a class="btn btn-link" href="">Chính Sách Bảo Mật</a>
+                  <a class="btn btn-link" href="">Điều Khoản & Điều Kiện</a>
+                  <a class="btn btn-link" href="">Hỗ Trợ</a>
+                </div>
+                <div class="col-md-6">
+                  <h5 class="fw-bold text-white mb-4">Dịch Vụ</h5>
+                  <a class="btn btn-link" href="">Đăng ký Tên Miền</a>
+                  <a class="btn btn-link" href="">Hosting Dùng Chung</a>
+                  <a class="btn btn-link" href="">Hosting VPS</a>
+                  <a class="btn btn-link" href="">Hosting Chuyên Dụng</a>
+                  <a class="btn btn-link" href="">Hosting Reseller</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+              <h5 class="fw-bold text-white mb-4">Liên Hệ</h5>
+              <p class="mb-2">
+                <i class="fa fa-map-marker-alt me-3"></i>123 Street, New York,
+                USA
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-phone-alt me-3"></i>+012 345 67890
+              </p>
+              <p class="mb-2">
+                <i class="fa fa-envelope me-3"></i>loi24th@sv.dla.edu.vn
+              </p>
+              <div class="d-flex pt-2">
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a class="btn btn-outline-light btn-social" href=""
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mt-lg-n5">
+              <div class="bg-light rounded" style="padding: 30px">
+                <input
+                  type="text"
+                  class="form-control border-0 py-2 mb-2"
+                  placeholder="Họ & Tên"
+                />
+                <input
+                  type="email"
+                  class="form-control border-0 py-2 mb-2"
+                  placeholder="Email"
+                />
+                <textarea
+                  class="form-control border-0 mb-2"
+                  rows="2"
+                  placeholder="Lời Nhắn"
+                ></textarea>
+                <button class="btn btn-primary w-100 py-2">Gửi Tin Nhắn</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container px-lg-5">
+          <div class="copyright">
+            <div class="row">
+              <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                &copy; <a class="border-bottom" href="#">GreenHost</a>, All
+                Right Reserved. Designed By
+                <a class="border-bottom" href="https://htmlcodex.com"
+                  >HTML Codex</a
+                >
+              </div>
+              <div class="col-md-6 text-center text-md-end">
+                <div class="footer-menu">
+                  <a href="index.html">Trang Chủ</a>
+                  <a href="">Cookies</a>
+                  <a href="">Trợ giúp</a>
+                  <a href="">FQAs</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer End -->
+
+      <!-- Back to Top -->
+      <a href="#" class="btn btn-lg btn-secondary btn-lg-square back-to-top"
+        ><i class="bi bi-arrow-up"></i
+      ></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+      // Auth System
+      let users = [];
+      let currentUser = null;
+
+      function saveUsersToLocalStorage() {
+        localStorage.setItem("greenhost_users", JSON.stringify(users));
+      }
+
+      function loadUsersFromLocalStorage() {
+        const savedUsers = localStorage.getItem("greenhost_users");
+        if (savedUsers) {
+          users = JSON.parse(savedUsers);
+        }
+      }
+
+      function saveCurrentUserToLocalStorage() {
+        if (currentUser) {
+          localStorage.setItem(
+            "greenhost_current_user",
+            JSON.stringify(currentUser),
+          );
+        } else {
+          localStorage.removeItem("greenhost_current_user");
+        }
+      }
+
+      function loadCurrentUserFromLocalStorage() {
+        const savedCurrentUser = localStorage.getItem("greenhost_current_user");
+        if (savedCurrentUser) {
+          currentUser = JSON.parse(savedCurrentUser);
+          const registerBtnEl = document.getElementById("registerBtn");
+          const userMenuEl = document.getElementById("userMenu");
+          const userNameDisplayEl = document.getElementById("userNameDisplay");
+          const userAvatarEl = document.getElementById("userAvatar");
+          if (currentUser && registerBtnEl && userMenuEl) {
+            registerBtnEl.style.display = "none";
+            userMenuEl.style.display = "block";
+            userNameDisplayEl.textContent = currentUser.name;
+            userAvatarEl.textContent = currentUser.name.charAt(0).toUpperCase();
+          }
+        }
+      }
+
+      const registerBtn = document.getElementById("registerBtn");
+      const userMenu = document.getElementById("userMenu");
+      const userNameDisplay = document.getElementById("userNameDisplay");
+      const userAvatar = document.getElementById("userAvatar");
+
+      loadUsersFromLocalStorage();
+      loadCurrentUserFromLocalStorage();
+
+      function updateUIAfterLogin(user) {
+        currentUser = user;
+        saveCurrentUserToLocalStorage();
+        registerBtn.style.display = "none";
+        userMenu.style.display = "block";
+        userNameDisplay.textContent = user.name;
+        userAvatar.textContent = user.name.charAt(0).toUpperCase();
+      }
+
+      function logout() {
+        currentUser = null;
+        saveCurrentUserToLocalStorage();
+        registerBtn.style.display = "block";
+        userMenu.style.display = "none";
+        document.getElementById("loginForm").reset();
+        showSuccessMessage("Đã đăng xuất!", "Hẹn gặp lại bạn tại GreenHost!");
+      }
+
+      function showSuccessMessage(title, detail) {
+        document.getElementById("successMessage").innerHTML = title;
+        document.getElementById("successDetail").innerHTML = detail;
+        const successModal = new bootstrap.Modal(
+          document.getElementById("successModal"),
+        );
+        successModal.show();
+      }
+
+      document.querySelectorAll(".auth-tab").forEach((tab) => {
+        tab.addEventListener("click", function () {
+          const formType = this.getAttribute("data-form");
+          document
+            .querySelectorAll(".auth-tab")
+            .forEach((t) => t.classList.remove("active"));
+          this.classList.add("active");
+          document
+            .querySelectorAll(".auth-form")
+            .forEach((form) => form.classList.remove("active"));
+          document.getElementById(`${formType}-form`).classList.add("active");
+        });
+      });
+
+      function switchToRegister() {
+        document.querySelector('.auth-tab[data-form="register"]').click();
+      }
+      function switchToLogin() {
+        document.querySelector('.auth-tab[data-form="login"]').click();
+      }
+
+      function handleLogin() {
+        const email = document.getElementById("loginEmail").value;
+        const password = document.getElementById("loginPassword").value;
+        let isValid = true;
+
+        document.getElementById("loginEmailError").style.display = "none";
+        document.getElementById("loginPasswordError").style.display = "none";
+        const oldError = document.getElementById("loginAuthError");
+        if (oldError) oldError.remove();
+
+        if (!email || email.trim() === "") {
+          document.getElementById("loginEmailError").innerHTML =
+            "Vui lòng nhập email";
+          document.getElementById("loginEmailError").style.display = "block";
+          isValid = false;
+        }
+        if (!password || password.trim() === "") {
+          document.getElementById("loginPasswordError").innerHTML =
+            "Vui lòng nhập mật khẩu";
+          document.getElementById("loginPasswordError").style.display = "block";
+          isValid = false;
+        }
+
+        if (isValid) {
+          const foundUser = users.find(
+            (user) => user.email === email && user.password === password,
+          );
+          if (foundUser) {
+            const authModal = bootstrap.Modal.getInstance(
+              document.getElementById("authModal"),
+            );
+            authModal.hide();
+            updateUIAfterLogin(foundUser);
+            showSuccessMessage(
+              "Đăng nhập thành công!",
+              `Chào mừng ${foundUser.name} đã quay trở lại GreenHost!`,
+            );
+            document.getElementById("loginForm").reset();
+          } else {
+            const errorDiv = document.createElement("div");
+            errorDiv.id = "loginAuthError";
+            errorDiv.className = "alert alert-danger mt-3";
+            errorDiv.innerHTML =
+              '<i class="fa fa-exclamation-triangle me-2"></i> Email hoặc mật khẩu không chính xác!';
+            document.getElementById("loginForm").appendChild(errorDiv);
+            setTimeout(() => {
+              if (errorDiv) errorDiv.remove();
+            }, 3000);
+          }
+        }
+      }
+
+      function handleRegister() {
+        const name = document.getElementById("regName").value;
+        const email = document.getElementById("regEmail").value;
+        const password = document.getElementById("regPassword").value;
+        const confirmPassword =
+          document.getElementById("regConfirmPassword").value;
+        let isValid = true;
+
+        document.getElementById("regNameError").style.display = "none";
+        document.getElementById("regEmailError").style.display = "none";
+        document.getElementById("regPasswordError").style.display = "none";
+        document.getElementById("regConfirmError").style.display = "none";
+        const oldEmailError = document.getElementById("regEmailExistsError");
+        if (oldEmailError) oldEmailError.remove();
+
+        if (!name || name.trim() === "") {
+          document.getElementById("regNameError").innerHTML =
+            "Vui lòng nhập họ tên";
+          document.getElementById("regNameError").style.display = "block";
+          isValid = false;
+        }
+        if (!email || email.trim() === "") {
+          document.getElementById("regEmailError").innerHTML =
+            "Vui lòng nhập email";
+          document.getElementById("regEmailError").style.display = "block";
+          isValid = false;
+        } else if (!email.includes("@")) {
+          document.getElementById("regEmailError").innerHTML =
+            "Email không hợp lệ";
+          document.getElementById("regEmailError").style.display = "block";
+          isValid = false;
+        } else {
+          const emailExists = users.some((user) => user.email === email);
+          if (emailExists) {
+            const errorDiv = document.createElement("div");
+            errorDiv.id = "regEmailExistsError";
+            errorDiv.className = "alert alert-danger mt-2";
+            errorDiv.innerHTML =
+              '<i class="fa fa-exclamation-triangle me-2"></i> Email này đã được đăng ký!';
+            document.getElementById("registerForm").appendChild(errorDiv);
+            isValid = false;
+          }
+        }
+        if (!password) {
+          document.getElementById("regPasswordError").innerHTML =
+            "Vui lòng nhập mật khẩu";
+          document.getElementById("regPasswordError").style.display = "block";
+          isValid = false;
+        } else if (password.length < 6) {
+          document.getElementById("regPasswordError").innerHTML =
+            "Mật khẩu phải có ít nhất 6 ký tự";
+          document.getElementById("regPasswordError").style.display = "block";
+          isValid = false;
+        }
+        if (password !== confirmPassword) {
+          document.getElementById("regConfirmError").innerHTML =
+            "Mật khẩu xác nhận không khớp";
+          document.getElementById("regConfirmError").style.display = "block";
+          isValid = false;
+        }
+
+        if (isValid) {
+          const newUser = { email: email, password: password, name: name };
+          users.push(newUser);
+          saveUsersToLocalStorage();
+          const authModal = bootstrap.Modal.getInstance(
+            document.getElementById("authModal"),
+          );
+          authModal.hide();
+          showSuccessMessage(
+            "Đăng ký thành công!",
+            `Chào mừng ${name} đã tham gia GreenHost! Vui lòng đăng nhập.`,
+          );
+          document.getElementById("registerForm").reset();
+          setTimeout(() => {
+            switchToLogin();
+          }, 1500);
+        }
+      }
+
+      document
+        .getElementById("loginPassword")
+        ?.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            handleLogin();
+          }
+        });
+      document
+        .getElementById("loginEmail")
+        ?.addEventListener("keypress", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            handleLogin();
+          }
+        });
+
+      document
+        .getElementById("logoutBtn")
+        ?.addEventListener("click", function (e) {
+          e.preventDefault();
+          logout();
+          const dropdown = bootstrap.Dropdown.getInstance(
+            document.querySelector(".user-dropdown .dropdown-toggle"),
+          );
+          if (dropdown) dropdown.hide();
+        });
+
+      // Cart Functions
+      function removeItem(btn) {
+        btn.closest(".cart-item").remove();
+        updateCartTotal();
+      }
+
+      function updateCartTotal() {
+        // Placeholder for cart total calculation
+        showSuccessMessage("Đã cập nhật!", "Giỏ hàng đã được cập nhật.");
+      }
+
+      function applyCoupon() {
+        const code = document.getElementById("couponCode").value;
+        if (code === "GREEN30") {
+          showSuccessMessage("Thành công!", "Mã giảm giá 30% đã được áp dụng!");
+        } else {
+          alert("Mã giảm giá không hợp lệ!");
+        }
+      }
+
+      function checkout() {
+        if (!currentUser) {
+          showSuccessMessage(
+            "Vui lòng đăng nhập!",
+            "Bạn cần đăng nhập để thanh toán.",
+          );
+          const authModal = new bootstrap.Modal(
+            document.getElementById("authModal"),
+          );
+          authModal.show();
+        } else {
+          showSuccessMessage(
+            "Đặt hàng thành công!",
+            "Cảm ơn bạn đã mua hàng tại GreenHost!",
+          );
+        }
+      }
+    </script>
+    <script>
+      function loadCart() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const container = document.getElementById("cartItems");
+
+        if (cart.length === 0) {
+          container.innerHTML = "<p>Giỏ hàng trống</p>";
+          return;
+        }
+
+        let html = "";
+
+        cart.forEach((item) => {
+          html += `
+      <div class="border p-3 mb-2 d-flex justify-content-between">
+        <div>
+          <strong>${item.domain}</strong>
+        </div>
+        <div>
+          ${item.price.toLocaleString("vi-VN")} đ
+        </div>
+      </div>
+    `;
+        });
+
+        container.innerHTML = html;
+      }
+
+      loadCart();
+    </script>
+  </body>
+</html>

@@ -37,7 +37,6 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
-
     <style>
       /* Modal Login/Signup Styles */
       .auth-modal .modal-content {
@@ -189,7 +188,8 @@
         transform: translateY(-3px);
         opacity: 0.9;
       }
-      /* User Dropdown Styles - ĐÃ SỬA LỖI */
+
+      /* User Dropdown Styles - đồng bộ với index */
       .user-dropdown {
         position: relative;
       }
@@ -226,8 +226,6 @@
         font-weight: bold;
       }
 
-      /* ===== QUAN TRỌNG: SỬA LỖI DROPDOWN ===== */
-      /* Ban đầu menu ẩn */
       .user-dropdown .dropdown-menu {
         display: block;
         visibility: hidden;
@@ -236,7 +234,7 @@
           visibility 0.15s ease,
           opacity 0.15s ease,
           margin-top 0.15s ease;
-        margin-top: 0px;
+        margin-top: 0;
         border-radius: 12px;
         border: none;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
@@ -249,7 +247,6 @@
         z-index: 1000;
       }
 
-      /* Tạo "cầu nối" - khoảng trống ảo để chuột di chuyển từ nút xuống menu */
       .user-dropdown .dropdown-menu::before {
         content: "";
         position: absolute;
@@ -260,21 +257,18 @@
         background: transparent;
       }
 
-      /* Hiển thị menu khi hover vào nút */
       .user-dropdown:hover .dropdown-menu {
         visibility: visible;
         opacity: 1;
         margin-top: 8px;
       }
 
-      /* GIỮ MENU HIỂN THỊ KHI HOVER VÀO CHÍNH MENU */
       .user-dropdown .dropdown-menu:hover {
         visibility: visible;
         opacity: 1;
         margin-top: 8px;
       }
 
-      /* Style cho các item trong menu */
       .dropdown-menu-user .dropdown-item {
         padding: 10px 20px;
         font-size: 14px;
@@ -299,30 +293,167 @@
         margin: 5px 0;
         border-top: 1px solid #e9ecef;
       }
-      /* Nút xem thêm màu đỏ - hover đậm hơn */
-      .btn-danger-custom {
-        background-color: #dc3545 !important;
-        border-color: #dc3545 !important;
-        transition: all 0.3s ease !important;
+      /* ===== DOMAIN PAGE STYLE ===== */
+      .domain-hero .breadcrumb {
+        margin-bottom: 0;
       }
 
-      .btn-danger-custom:hover {
-        background-color: #b02a37 !important;
-        border-color: #b02a37 !important;
-        transform: translateY(-2px);
-      }
-      /* Chỉnh vị trí dropdown trên navbar */
-      .navbar .nav-item.dropdown {
-        position: relative;
+      .domain-hero .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255, 255, 255, 0.75);
       }
 
-      .navbar .nav-item.dropdown .dropdown-menu {
-        top: 100% !important;
-        margin-top: -20px !important;
+      .domain-page-section {
+        margin-top: 90px;
+        margin-bottom: 90px;
       }
-      /* Mega menu Web & Hosting */
+
+      .domain-page-intro p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #6c757d;
+      }
+
+      .domain-search-box {
+        background: #ffffff;
+        padding: 22px;
+        border-radius: 20px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+        border: 1px solid #eef1f4;
+      }
+
+      .domain-search-box .form-control {
+        height: 64px;
+        border-radius: 14px;
+        border: 1px solid #dfe5eb;
+        background: #fff;
+        color: #333;
+        font-size: 16px;
+        padding-left: 20px;
+        padding-right: 165px;
+      }
+
+      .domain-search-box .form-control:focus {
+        border-color: #86c200;
+        box-shadow: 0 0 0 0.2rem rgba(134, 194, 0, 0.12);
+      }
+
+      .domain-search-btn {
+        top: 50% !important;
+        transform: translateY(-50%);
+        right: 10px !important;
+        margin: 0 !important;
+        height: 46px;
+        padding: 0 22px !important;
+        border-radius: 12px;
+        font-weight: 600;
+      }
+
+      .domain-extension-card {
+        background: #ffffff;
+        border: 1px solid #edf1f5;
+        border-radius: 16px;
+        padding: 20px 10px;
+        height: 100%;
+        transition: all 0.25s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+      }
+
+      .domain-extension-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+        border-color: rgba(134, 194, 0, 0.45);
+      }
+
+      .domain-extension-card h5 {
+        font-size: 22px;
+        margin-bottom: 8px;
+      }
+
+      .domain-extension-card p {
+        margin: 0;
+        color: #6c757d;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .domain-note {
+        margin-top: 28px;
+        text-align: center;
+        color: #6c757d;
+        font-size: 14px;
+      }
+
+      .domain-note strong {
+        color: #333;
+      }
+
+      .domain-info-strip {
+        margin-top: 30px;
+        background: linear-gradient(135deg, #f8fbf1 0%, #ffffff 100%);
+        border: 1px solid #e8f0d8;
+        border-radius: 18px;
+        padding: 20px;
+      }
+
+      .domain-info-strip .info-item {
+        text-align: center;
+        padding: 10px;
+      }
+
+      .domain-info-strip .info-item i {
+        font-size: 24px;
+        color: #86c200;
+        margin-bottom: 10px;
+      }
+
+      .domain-info-strip .info-item h6 {
+        margin-bottom: 6px;
+        font-weight: 700;
+        color: #333;
+      }
+
+      .domain-info-strip .info-item p {
+        margin: 0;
+        color: #6c757d;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      /* ===== MEGA MENU RIÊNG ===== */
+      .domain-mega-dropdown,
+      .vps-mega-dropdown,
       .mega-dropdown {
         position: static !important;
+      }
+
+      .domain-mega-menu {
+        width: 820px !important;
+        max-width: 95vw;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+        padding: 22px 24px;
+        border: none;
+        border-radius: 0;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        top: 100% !important;
+        margin-top: -14px !important;
+      }
+
+      .vps-mega-menu {
+        width: 780px !important;
+        max-width: 95vw;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+        padding: 22px 24px;
+        border: none;
+        border-radius: 0;
+        background: #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        top: 100% !important;
+        margin-top: -14px !important;
       }
 
       .mega-dropdown .mega-menu {
@@ -387,16 +518,34 @@
         color: #666;
       }
 
-      /* Responsive */
       @media (max-width: 991.98px) {
+        .domain-search-box {
+          padding: 16px;
+        }
+
+        .domain-search-box .form-control {
+          height: 56px;
+          padding-right: 20px;
+        }
+
+        .domain-search-btn {
+          position: static !important;
+          transform: none;
+          width: 100%;
+          margin-top: 12px !important;
+          height: 50px;
+        }
+
         .mega-dropdown {
           position: relative !important;
         }
 
-        .mega-dropdown .mega-menu {
-          width: 100%;
+        .mega-dropdown .mega-menu,
+        .domain-mega-menu,
+        .vps-mega-menu {
+          width: 100% !important;
           left: 0 !important;
-          transform: none;
+          transform: none !important;
           max-width: 100%;
           padding: 15px;
           margin-top: 0 !important;
@@ -435,6 +584,7 @@
         >
           <a href="" class="navbar-brand p-0">
             <h1 class="m-0"><i class="fa fa-server me-3"></i>GreenHost</h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
           </a>
           <button
             class="navbar-toggler"
@@ -446,14 +596,12 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-              <a href="index.html" class="nav-item nav-link active"
-                >Trang chủ</a
-              >
+              <a href="index.html" class="nav-item nav-link">Trang chủ</a>
               <a href="proxy.html" class="nav-item nav-link">Proxy</a>
               <div class="nav-item dropdown mega-dropdown domain-mega-dropdown">
                 <a
                   href="domain.html"
-                  class="nav-link dropdown-toggle"
+                  class="nav-link dropdown-toggle active"
                   data-bs-toggle="dropdown"
                   onclick="window.location.href = 'domain.html'"
                 >
@@ -740,37 +888,29 @@
 
         <div class="container-xxl py-5 bg-primary hero-header mb-5">
           <div class="container my-5 py-5 px-lg-5">
-            <div class="row g-5">
-              <div class="col-lg-6 pt-5 text-center text-lg-start">
-                <h1 class="display-4 text-white mb-4 animated slideInLeft">
-                  Siêu Ưu Đãi
+            <div class="row g-5 pt-5">
+              <div class="col-12 text-center text-lg-start">
+                <h1 class="display-4 text-white animated slideInLeft">
+                  Tên Miền
                 </h1>
-                <p class="text-white animated slideInLeft"></p>
-                <h1 class="text-white mb-4 animated slideInLeft">
-                  <small
-                    class="align-top fw-normal"
-                    style="font-size: 15px; line-height: 25px"
-                    >Chỉ với:</small
+                <nav aria-label="breadcrumb">
+                  <ol
+                    class="breadcrumb justify-content-center justify-content-lg-start animated slideInLeft"
                   >
-                  <span>69K</span>
-                  <small
-                    class="align-bottom fw-normal"
-                    style="font-size: 15px; line-height: 33px"
-                    >/ VND</small
-                  >
-                </h1>
-                <a
-                  href="hosting.html"
-                  class="btn btn-secondary py-sm-3 px-sm-5 me-3 animated slideInLeft"
-                  >Mua Ngay</a
-                >
-              </div>
-              <div class="col-lg-6 text-center text-lg-start">
-                <img
-                  class="img-fluid animated zoomIn"
-                  src="img/hero.png"
-                  alt=""
-                />
+                    <li class="breadcrumb-item">
+                      <a class="text-white" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                      <a class="text-white" href="#">Pages</a>
+                    </li>
+                    <li
+                      class="breadcrumb-item text-white active"
+                      aria-current="page"
+                    >
+                      Tên Miền
+                    </li>
+                  </ol>
+                </nav>
               </div>
             </div>
           </div>
@@ -778,6 +918,39 @@
       </div>
       <!-- Navbar & Hero End -->
 
+      <!-- Full Screen Search Start -->
+      <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+          <div class="modal-content" style="background: rgba(29, 40, 51, 0.8)">
+            <div class="modal-header border-0">
+              <button
+                type="button"
+                class="btn bg-white btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div
+              class="modal-body d-flex align-items-center justify-content-center"
+            >
+              <div class="input-group" style="max-width: 600px">
+                <input
+                  type="text"
+                  class="form-control bg-transparent border-light p-3"
+                  placeholder="Type search keyword"
+                />
+                <button class="btn btn-light px-4">
+                  <i class="bi bi-search"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Full Screen Search End -->
+      <!-- Modal Đăng nhập -->
+
+      <!-- Login/Register Modal -->
       <div
         class="modal fade auth-modal"
         id="authModal"
@@ -962,9 +1135,8 @@
                     alert('Facebook login coming soon!');
                     return false;
                   "
-                >
-                  <i class="fab fa-facebook-f"></i>
-                </a>
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
                 <a
                   href="#"
                   class="btn-social google"
@@ -972,12 +1144,17 @@
                     alert('Google login coming soon!');
                     return false;
                   "
-                >
-                  <i class="fab fa-google"></i>
-                </a>
-                <a href="admin/index.html" class="btn-social twitter">
-                  <i class="fab fa-twitter"></i>
-                </a>
+                  ><i class="fab fa-google"></i
+                ></a>
+                <a
+                  href="#"
+                  class="btn-social twitter"
+                  onclick="
+                    alert('Twitter login coming soon!');
+                    return false;
+                  "
+                  ><i class="fab fa-twitter"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -1002,714 +1179,154 @@
           </div>
         </div>
       </div>
-
-      <!-- Success Modal (after login/register) -->
+      <!-- Modal Thông báo -->
       <div class="modal fade" id="successModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content text-center p-4">
-            <div class="modal-body">
-              <i
-                class="fa fa-check-circle text-success"
-                style="font-size: 70px"
-              ></i>
-              <h3 class="mt-3" id="successMessage">Login Successful!</h3>
-              <p id="successDetail">Welcome back to GreenHost!</p>
-              <button class="btn btn-primary mt-3" data-bs-dismiss="modal">
-                Continue
-              </button>
-            </div>
+            <i
+              class="fa fa-check-circle text-success"
+              style="font-size: 50px"
+            ></i>
+            <h3 id="successMessage">Thành công!</h3>
+            <button class="btn btn-primary mt-3" data-bs-dismiss="modal">
+              Đóng
+            </button>
           </div>
         </div>
       </div>
-
-      <!-- Full Screen Search Start -->
-      <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-          <div class="modal-content" style="background: rgba(29, 40, 51, 0.8)">
-            <div class="modal-header border-0">
-              <button
-                type="button"
-                class="btn bg-white btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div
-              class="modal-body d-flex align-items-center justify-content-center"
-            >
-              <div class="input-group" style="max-width: 600px">
-                <input
-                  type="text"
-                  class="form-control bg-transparent border-light p-3"
-                  placeholder="Tìm kiếm tên miền, hosting, hoặc dịch vụ..."
-                />
-                <button class="btn btn-light px-4">
-                  <i class="bi bi-search"></i>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Full Screen Search End -->
-
       <!-- Domain Search Start -->
-      <div class="container-xxl domain mb-5" style="margin-top: 90px">
+      <div class="container-xxl domain-page-section">
         <div class="container px-lg-5">
           <div class="row justify-content-center">
             <div class="col-lg-10">
               <div
-                class="section-title position-relative text-center mx-auto mb-4 pb-4 wow fadeInUp"
+                class="section-title position-relative text-center mx-auto mb-4 pb-4 wow fadeInUp domain-page-intro"
                 data-wow-delay="0.1s"
-                style="max-width: 600px"
+                style="max-width: 760px"
               >
-                <h1 class="mb-3">Chọn Miền của Bạn</h1>
-                <p class="mb-1"></p>
+                <h1 class="mb-3">Chọn Tên Miền của Bạn</h1>
+                <p class="mb-0">
+                  Tên miền là địa chỉ trực tuyến của bạn trên Internet. Hãy chọn
+                  một tên miền dễ nhớ, chuyên nghiệp và phù hợp với thương hiệu
+                  để khách hàng có thể tìm thấy bạn nhanh chóng hơn.
+                </p>
               </div>
 
               <div
-                class="position-relative w-100 my-3 wow fadeInUp"
+                class="domain-search-box position-relative wow fadeInUp"
                 data-wow-delay="0.3s"
               >
-                <input
-                  class="form-control bg-transparent w-100 py-3 ps-4 pe-5"
-                  type="text"
-                  placeholder="Nhập tên miền bạn muốn tìm kiếm"
-                />
-                <button
-                  type="button"
-                  class="btn btn-primary py-2 px-3 position-absolute top-0 end-0 mt-2 me-2"
-                >
-                  Tìm
-                </button>
-              </div>
-              <div class="row g-3 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                  <h5 class="fw-bold text-primary mb-1">.com</h5>
-                  <p class="mb-0">$9.99/year</p>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                  <h5 class="fw-bold text-primary mb-1">.net</h5>
-                  <p class="mb-0">$9.99/year</p>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                  <h5 class="fw-bold text-primary mb-1">.org</h5>
-                  <p class="mb-0">$9.99/year</p>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                  <h5 class="fw-bold text-primary mb-1">.us</h5>
-                  <p class="mb-0">$9.99/year</p>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                  <h5 class="fw-bold text-primary mb-1">.eu</h5>
-                  <p class="mb-0">$9.99/year</p>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-6 text-center">
-                  <h5 class="fw-bold text-primary mb-1">.co.uk</h5>
-                  <p class="mb-0">$9.99/year</p>
-                </div>
-                <!-- Nút Xem thêm màu đỏ - Cách đơn giản -->
-
-                <!-- Nút Xem thêm màu đỏ - Cách đơn giản -->
-                <!-- Nút Xem thêm màu đỏ, ngắn, chữ trắng -->
-                <div
-                  class="text-center mt-4 wow fadeInUp"
-                  data-wow-delay="0.7s"
-                >
-                  <a
-                    href="domain.html"
-                    class="btn btn-danger px-4 py-2"
-                    style="
-                      background-color: #dc3545;
-                      border-color: #dc3545;
-                      color: white;
-                      font-weight: 500;
-                    "
-                    onmouseover="
-                      this.style.backgroundColor = '#b02a37';
-                      this.style.borderColor = '#b02a37';
-                    "
-                    onmouseout="
-                      this.style.backgroundColor = '#dc3545';
-                      this.style.borderColor = '#dc3545';
-                    "
+                <div class="position-relative w-100">
+                  <input
+                    id="domainInput"
+                    class="form-control w-100"
+                    type="text"
+                    placeholder="Nhập tên miền, ví dụ: tenmiencuaban.com"
+                  />
+                  <button
+                    id="searchDomainBtn"
+                    type="button"
+                    class="btn btn-primary px-4 domain-search-btn position-absolute"
                   >
-                    Xem thêm
-                  </a>
+                    Tìm Kiếm
+                  </button>
+                </div>
+              </div>
+
+              <div class="row g-3 mt-2 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 text-center">
+                  <div class="domain-extension-card">
+                    <h5 class="fw-bold text-primary">.com</h5>
+                    <p>$9.99/year</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 text-center">
+                  <div class="domain-extension-card">
+                    <h5 class="fw-bold text-primary">.net</h5>
+                    <p>$9.99/year</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 text-center">
+                  <div class="domain-extension-card">
+                    <h5 class="fw-bold text-primary">.org</h5>
+                    <p>$9.99/year</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 text-center">
+                  <div class="domain-extension-card">
+                    <h5 class="fw-bold text-primary">.us</h5>
+                    <p>$9.99/year</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 text-center">
+                  <div class="domain-extension-card">
+                    <h5 class="fw-bold text-primary">.eu</h5>
+                    <p>$9.99/year</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 text-center">
+                  <div class="domain-extension-card">
+                    <h5 class="fw-bold text-primary">.co.uk</h5>
+                    <p>$9.99/year</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="domain-note wow fadeInUp" data-wow-delay="0.6s">
+                Hỗ trợ kiểm tra nhanh khả dụng tên miền và tư vấn lựa chọn đuôi
+                tên miền phù hợp cho
+                <strong>cá nhân, doanh nghiệp và thương hiệu</strong>.
+              </p>
+
+              <div class="domain-info-strip wow fadeInUp" data-wow-delay="0.7s">
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <div class="info-item">
+                      <i class="fa fa-bolt"></i>
+                      <h6>Kiểm tra nhanh</h6>
+                      <p>
+                        Tìm kiếm tên miền chỉ trong vài giây với thao tác đơn
+                        giản.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="info-item">
+                      <i class="fa fa-shield-alt"></i>
+                      <h6>Bảo mật cao</h6>
+                      <p>
+                        Hỗ trợ bảo vệ thông tin tên miền và quản lý DNS ổn định.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="info-item">
+                      <i class="fa fa-headset"></i>
+                      <h6>Hỗ trợ 24/7</h6>
+                      <p>
+                        Tư vấn lựa chọn tên miền phù hợp với mục tiêu sử dụng.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div id="domainLoading" class="text-center mt-4" style="display: none">
+        <div class="spinner-border text-primary" role="status"></div>
+        <p class="mt-2">Đang kiểm tra tên miền...</p>
+      </div>
+      <div id="domainResults" class="mt-4"></div>
       <!-- Domain Search End -->
-
-      <!-- About Start -->
-      <div class="container-xxl py-5">
-        <div class="container px-lg-5">
-          <div class="row g-5 align-items-center">
-            <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
-              <div class="section-title position-relative mb-4 pb-4">
-                <h1 class="mb-2">Chào mừng tới GreenHost</h1>
-              </div>
-              <p class="mb-4"></p>
-              <div class="row g-3">
-                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.1s">
-                  <div class="bg-light rounded text-center p-4">
-                    <i class="fa fa-users-cog fa-2x text-primary mb-2"></i>
-                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                    <p class="mb-0">Đã đăng ký</p>
-                  </div>
-                </div>
-                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.3s">
-                  <div class="bg-light rounded text-center p-4">
-                    <i class="fa fa-users fa-2x text-primary mb-2"></i>
-                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                    <p class="mb-0">Khách hàng</p>
-                  </div>
-                </div>
-                <div class="col-sm-4 wow fadeIn" data-wow-delay="0.5s">
-                  <div class="bg-light rounded text-center p-4">
-                    <i class="fa fa-check fa-2x text-primary mb-2"></i>
-                    <h2 class="mb-1" data-toggle="counter-up">1234</h2>
-                    <p class="mb-0">Dự án</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <img
-                class="img-fluid wow zoomIn"
-                data-wow-delay="0.5s"
-                src="img/about.png"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- About End -->
-
-      <!-- Pricing Start -->
-      <div class="container-xxl py-5">
-        <div class="container px-lg-5">
-          <div
-            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
-            data-wow-delay="0.1s"
-            style="max-width: 600px"
-          >
-            <h1 class="mb-3">Sản Phẩm Phổ Biến</h1>
-            <p class="mb-1"></p>
-          </div>
-          <div class="row gy-5 gx-4">
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
-              <div
-                class="position-relative shadow rounded border-top border-5 border-primary"
-              >
-                <div
-                  class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-primary rounded-circle"
-                  style="width: 45px; height: 45px; margin-top: -3px"
-                >
-                  <i class="fa fa-share-alt text-white"></i>
-                </div>
-                <div class="text-center border-bottom p-4 pt-5">
-                  <h4 class="fw-bold">Hosting dùng chung</h4>
-                  <p class="mb-0">
-                    Giải pháp hosting phù hợp cho cá nhân và doanh nghiệp nhỏ
-                  </p>
-                </div>
-                <div class="text-center border-bottom p-4">
-                  <p class="text-primary mb-1">
-                    Latest Offer - <strong>Save 30%</strong>
-                  </p>
-                  <h1 class="mb-3">
-                    <small
-                      class="align-top"
-                      style="font-size: 22px; line-height: 45px"
-                      >$</small
-                    >2.49<small
-                      class="align-bottom"
-                      style="font-size: 16px; line-height: 40px"
-                      >/ Month</small
-                    >
-                  </h1>
-                  <a class="btn btn-primary px-4 py-2" href="hosting.html"
-                    >Buy Now</a
-                  >
-                </div>
-                <div class="p-4">
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>100 GB Disk
-                    Space
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Unlimited
-                    Bandwith
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Upgrade to
-                    Positive SSL
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Automatic
-                    Malware Removal
-                  </p>
-                  <p class="mb-0">
-                    <i class="fa fa-check text-primary me-3"></i>30 Days Money
-                    Back Guarantee
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
-              <div
-                class="position-relative shadow rounded border-top border-5 border-secondary"
-              >
-                <div
-                  class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-secondary rounded-circle"
-                  style="width: 45px; height: 45px; margin-top: -3px"
-                >
-                  <i class="fa fa-server text-white"></i>
-                </div>
-                <div class="text-center border-bottom p-4 pt-5">
-                  <h4 class="fw-bold">VPS Hosting</h4>
-                  <p class="mb-0">
-                    Giải pháp hosting mạnh mẽ cho doanh nghiệp vừa và lớn
-                  </p>
-                </div>
-                <div class="text-center border-bottom p-4">
-                  <p class="text-primary mb-1">
-                    Latest Offer - <strong>Save 30%</strong>
-                  </p>
-                  <h1 class="mb-3">
-                    <small
-                      class="align-top"
-                      style="font-size: 22px; line-height: 45px"
-                      >$</small
-                    >5.49<small
-                      class="align-bottom"
-                      style="font-size: 16px; line-height: 40px"
-                      >/ Month</small
-                    >
-                  </h1>
-                  <a class="btn btn-secondary px-4 py-2" href="hosting.html"
-                    >Buy Now</a
-                  >
-                </div>
-                <div class="p-4">
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>100 GB Disk
-                    Space
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Unlimited
-                    Bandwith
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Upgrade to
-                    Positive SSL
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Automatic
-                    Malware Removal
-                  </p>
-                  <p class="mb-0">
-                    <i class="fa fa-check text-primary me-3"></i>30 Days Money
-                    Back Guarantee
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
-              <div
-                class="position-relative shadow rounded border-top border-5 border-primary"
-              >
-                <div
-                  class="d-flex align-items-center justify-content-center position-absolute top-0 start-50 translate-middle bg-primary rounded-circle"
-                  style="width: 45px; height: 45px; margin-top: -3px"
-                >
-                  <i class="fa fa-cog text-white"></i>
-                </div>
-                <div class="text-center border-bottom p-4 pt-5">
-                  <h4 class="fw-bold">Thuê Hosting</h4>
-                  <p class="mb-0">
-                    Giải pháp hosting chuyên nghiệp cho doanh nghiệp của bạn
-                  </p>
-                </div>
-                <div class="text-center border-bottom p-4">
-                  <p class="text-primary mb-1">
-                    Latest Offer - <strong>Save 30%</strong>
-                  </p>
-                  <h1 class="mb-3">
-                    <small
-                      class="align-top"
-                      style="font-size: 22px; line-height: 45px"
-                      >$</small
-                    >11.49<small
-                      class="align-bottom"
-                      style="font-size: 16px; line-height: 40px"
-                      >/ Month</small
-                    >
-                  </h1>
-                  <a class="btn btn-primary px-4 py-2" href="hosting.html"
-                    >Buy Now</a
-                  >
-                </div>
-                <div class="p-4">
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>100 GB Disk
-                    Space
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Unlimited
-                    Bandwith
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Upgrade to
-                    Positive SSL
-                  </p>
-                  <p class="border-bottom pb-3">
-                    <i class="fa fa-check text-primary me-3"></i>Automatic
-                    Malware Removal
-                  </p>
-                  <p class="mb-0">
-                    <i class="fa fa-check text-primary me-3"></i>30 Days Money
-                    Back Guarantee
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Pricing End -->
-
-      <!-- Comparison Start -->
-      <div class="container-xxl py-5">
-        <div class="container px-lg-5">
-          <div
-            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
-            data-wow-delay="0.1s"
-            style="max-width: 600px"
-          >
-            <h1 class="mb-3">Sever chung & riêng</h1>
-            <p class="mb-1">
-              So sánh chi tiết giữa máy chủ dùng chung và máy chủ chuyên dụng
-            </p>
-          </div>
-          <div class="row g-5 comparison position-relative">
-            <div class="col-lg-6 pe-lg-5">
-              <div class="section-title position-relative mx-auto mb-4 pb-4">
-                <h3 class="fw-bold mb-0">Shared Server</h3>
-              </div>
-              <div class="row gy-3 gx-5">
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                  <i class="fa fa-server fa-3x text-primary mb-3"></i>
-                  <h5 class="fw-bold">99.99% Uptime</h5>
-                  <p>
-                    Ipsum dolor diam stet stet kasd diam sea stet sed rebum
-                    dolor ipsum
-                  </p>
-                </div>
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                  <i class="fa fa-shield-alt fa-3x text-primary mb-3"></i>
-                  <h5 class="fw-bold">100% Secured</h5>
-                  <p>
-                    Ipsum dolor diam stet stet kasd diam sea stet sed rebum
-                    dolor ipsum
-                  </p>
-                </div>
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                  <i class="fa fa-cog fa-3x text-primary mb-3"></i>
-                  <h5 class="fw-bold">Control Panel</h5>
-                  <p>
-                    Ipsum dolor diam stet stet kasd diam sea stet sed rebum
-                    dolor ipsum
-                  </p>
-                </div>
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                  <i class="fa fa-headset fa-3x text-primary mb-3"></i>
-                  <h5 class="fw-bold">24/7 Support</h5>
-                  <p>
-                    Ipsum dolor diam stet stet kasd diam sea stet sed rebum
-                    dolor ipsum
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 ps-lg-5">
-              <div class="section-title position-relative mx-auto mb-4 pb-4">
-                <h3 class="fw-bold mb-0">Dedicated Server</h3>
-              </div>
-              <div class="row gy-3 gx-5">
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                  <i class="fa fa-server fa-3x text-secondary mb-3"></i>
-                  <h5 class="fw-bold">99.99% Uptime</h5>
-                  <p>
-                    Ipsum dolor diam stet stet kasd diam sea stet sed rebum
-                    dolor ipsum
-                  </p>
-                </div>
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                  <i class="fa fa-shield-alt fa-3x text-secondary mb-3"></i>
-                  <h5 class="fw-bold">100% Secured</h5>
-                  <p>
-                    Ipsum dolor diam stet stet kasd diam sea stet sed rebum
-                    dolor ipsum
-                  </p>
-                </div>
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                  <i class="fa fa-cog fa-3x text-secondary mb-3"></i>
-                  <h5 class="fw-bold">Control Panel</h5>
-                  <p>
-                    Ipsum dolor diam stet stet kasd diam sea stet sed rebum
-                    dolor ipsum
-                  </p>
-                </div>
-                <div class="col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                  <i class="fa fa-headset fa-3x text-secondary mb-3"></i>
-                  <h5 class="fw-bold">24/7 Support</h5>
-                  <p>
-                    Ipsum dolor diam stet stet kasd diam sea stet sed rebum
-                    dolor ipsum
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Comparison Start -->
-
-      <!-- Testimonial Start -->
-      <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container px-lg-5">
-          <div class="owl-carousel testimonial-carousel">
-            <div
-              class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4"
-            >
-              <div
-                class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle"
-                style="width: 45px; height: 45px; margin-top: -3px"
-              >
-                <i class="fa fa-quote-left text-white"></i>
-              </div>
-              <p class="mt-3">
-                Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor
-                stet amet eirmod eos labore diam
-              </p>
-              <div class="d-flex align-items-center">
-                <img
-                  class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-1.jpg"
-                  style="width: 50px; height: 50px"
-                />
-                <div class="ps-3">
-                  <h6 class="fw-bold mb-1">Client Name</h6>
-                  <small>Profession</small>
-                </div>
-              </div>
-            </div>
-            <div
-              class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4"
-            >
-              <div
-                class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle"
-                style="width: 45px; height: 45px; margin-top: -3px"
-              >
-                <i class="fa fa-quote-left text-white"></i>
-              </div>
-              <p class="mt-3">
-                Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor
-                stet amet eirmod eos labore diam
-              </p>
-              <div class="d-flex align-items-center">
-                <img
-                  class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-2.jpg"
-                  style="width: 50px; height: 50px"
-                />
-                <div class="ps-3">
-                  <h6 class="fw-bold mb-1">Client Name</h6>
-                  <small>Profession</small>
-                </div>
-              </div>
-            </div>
-            <div
-              class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 my-4"
-            >
-              <div
-                class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle"
-                style="width: 45px; height: 45px; margin-top: -3px"
-              >
-                <i class="fa fa-quote-left text-white"></i>
-              </div>
-              <p class="mt-3">
-                Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor
-                stet amet eirmod eos labore diam
-              </p>
-              <div class="d-flex align-items-center">
-                <img
-                  class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-3.jpg"
-                  style="width: 50px; height: 50px"
-                />
-                <div class="ps-3">
-                  <h6 class="fw-bold mb-1">Client Name</h6>
-                  <small>Profession</small>
-                </div>
-              </div>
-            </div>
-            <div
-              class="testimonial-item position-relative bg-light border-top border-5 border-primary rounded p-4 mt-4"
-            >
-              <div
-                class="d-flex align-items-center justify-content-center position-absolute top-0 start-0 ms-5 translate-middle bg-primary rounded-circle"
-                style="width: 45px; height: 45px; margin-top: -3px"
-              >
-                <i class="fa fa-quote-left text-white"></i>
-              </div>
-              <p class="mt-3">
-                Dolor et eos labore, stet justo sed est sed. Diam sed sed dolor
-                stet amet eirmod eos labore diam
-              </p>
-              <div class="d-flex align-items-center">
-                <img
-                  class="img-fluid flex-shrink-0 rounded-circle"
-                  src="img/testimonial-4.jpg"
-                  style="width: 50px; height: 50px"
-                />
-                <div class="ps-3">
-                  <h6 class="fw-bold mb-1">Client Name</h6>
-                  <small>Profession</small>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Testimonial End -->
-
-      <!-- Team Start -->
-      <div class="container-xxl py-5">
-        <div class="container px-lg-5">
-          <div
-            class="section-title position-relative text-center mx-auto mb-5 pb-4 wow fadeInUp"
-            data-wow-delay="0.1s"
-            style="max-width: 600px"
-          >
-            <h1 class="mb-3">Đội ngũ của chúng tôi</h1>
-            <p class="mb-1">Gặp gỡ đội ngũ chuyên gia đằng sau GreenHost</p>
-          </div>
-          <div class="row g-4">
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-              <div
-                class="team-item border-top border-5 border-primary rounded shadow overflow-hidden"
-              >
-                <div class="text-center p-4">
-                  <img
-                    class="img-fluid rounded-circle mb-4"
-                    src="img/team-1.jpg"
-                    alt=""
-                  />
-                  <h5 class="fw-bold mb-1">Full Name</h5>
-                  <small>Designation</small>
-                </div>
-                <div class="d-flex justify-content-center bg-primary p-3">
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-              <div
-                class="team-item border-top border-5 border-primary rounded shadow overflow-hidden"
-              >
-                <div class="text-center p-4">
-                  <img
-                    class="img-fluid rounded-circle mb-4"
-                    src="img/team-2.jpg"
-                    alt=""
-                  />
-                  <h5 class="fw-bold mb-1">Full Name</h5>
-                  <small>Designation</small>
-                </div>
-                <div class="d-flex justify-content-center bg-primary p-3">
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-              <div
-                class="team-item border-top border-5 border-primary rounded shadow overflow-hidden"
-              >
-                <div class="text-center p-4">
-                  <img
-                    class="img-fluid rounded-circle mb-4"
-                    src="img/team-3.jpg"
-                    alt=""
-                  />
-                  <h5 class="fw-bold mb-1">Full Name</h5>
-                  <small>Designation</small>
-                </div>
-                <div class="d-flex justify-content-center bg-primary p-3">
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-              <div
-                class="team-item border-top border-5 border-primary rounded shadow overflow-hidden"
-              >
-                <div class="text-center p-4">
-                  <img
-                    class="img-fluid rounded-circle mb-4"
-                    src="img/team-4.jpg"
-                    alt=""
-                  />
-                  <h5 class="fw-bold mb-1">Full Name</h5>
-                  <small>Designation</small>
-                </div>
-                <div class="d-flex justify-content-center bg-primary p-3">
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-facebook-f"></i
-                  ></a>
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-twitter"></i
-                  ></a>
-                  <a class="btn btn-square text-primary bg-white m-1" href=""
-                    ><i class="fab fa-instagram"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Team End -->
-
       <!-- Footer Start -->
       <div
         class="container-fluid bg-primary text-white footer mt-5 pt-5 wow fadeIn"
@@ -1723,7 +1340,7 @@
                 <input
                   class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5"
                   type="text"
-                  placeholder="Enter your email"
+                  placeholder="Nhập email của bạn"
                 />
                 <button
                   type="button"
@@ -1745,7 +1362,7 @@
                 </div>
                 <div class="col-md-6">
                   <h5 class="fw-bold text-white mb-4">Dịch Vụ</h5>
-                  <a class="btn btn-link" href="">Đăng Kí Tên Miền</a>
+                  <a class="btn btn-link" href="">Đăng ký Tên Miền</a>
                   <a class="btn btn-link" href="">Hosting Dùng Chung</a>
                   <a class="btn btn-link" href="">Hosting VPS</a>
                   <a class="btn btn-link" href="">Hosting Chuyên Dụng</a>
@@ -1763,7 +1380,7 @@
                 <i class="fa fa-phone-alt me-3"></i>+012 345 67890
               </p>
               <p class="mb-2">
-                <i class="fa fa-envelope me-3"></i>loidh.24th@sv.dla.edu.vn
+                <i class="fa fa-envelope me-3"></i>loi24th@sv.dla.edu.vn
               </p>
               <div class="d-flex pt-2">
                 <a class="btn btn-outline-light btn-social" href=""
@@ -1807,14 +1424,17 @@
             <div class="row">
               <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                 &copy; <a class="border-bottom" href="#">Your Site Name</a>, All
-                Right Reserved. Designed By
+                Right Reserved.
+
+                <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                Designed By
                 <a class="border-bottom" href="https://htmlcodex.com"
                   >HTML Codex</a
                 >
               </div>
               <div class="col-md-6 text-center text-md-end">
                 <div class="footer-menu">
-                  <a href="index.html">Trang chủ</a>
+                  <a href="">Trang Chủ</a>
                   <a href="">Cookies</a>
                   <a href="">Trợ giúp</a>
                   <a href="">FQAs</a>
@@ -1833,26 +1453,19 @@
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
     <script>
-      // Custom JavaScript for Auth Modal
-      let users = [];
-      let currentUser = null;
-
       function saveUsersToLocalStorage() {
         localStorage.setItem("greenhost_users", JSON.stringify(users));
       }
-
       function loadUsersFromLocalStorage() {
         const savedUsers = localStorage.getItem("greenhost_users");
         if (savedUsers) {
@@ -1862,7 +1475,6 @@
           console.log("Chưa có tài khoản nào trong bộ nhớ");
         }
       }
-
       function saveCurrentUserToLocalStorage() {
         if (currentUser) {
           localStorage.setItem(
@@ -1873,7 +1485,6 @@
           localStorage.removeItem("greenhost_current_user");
         }
       }
-
       function loadCurrentUserFromLocalStorage() {
         const savedCurrentUser = localStorage.getItem("greenhost_current_user");
         if (savedCurrentUser) {
@@ -1882,7 +1493,6 @@
           const userMenuEl = document.getElementById("userMenu");
           const userNameDisplayEl = document.getElementById("userNameDisplay");
           const userAvatarEl = document.getElementById("userAvatar");
-
           if (currentUser && registerBtnEl && userMenuEl) {
             registerBtnEl.style.display = "none";
             userMenuEl.style.display = "block";
@@ -1895,15 +1505,12 @@
           );
         }
       }
-
       const registerBtn = document.getElementById("registerBtn");
       const userMenu = document.getElementById("userMenu");
       const userNameDisplay = document.getElementById("userNameDisplay");
       const userAvatar = document.getElementById("userAvatar");
-
       loadUsersFromLocalStorage();
       loadCurrentUserFromLocalStorage();
-
       function updateUIAfterLogin(user) {
         currentUser = user;
         saveCurrentUserToLocalStorage();
@@ -1912,7 +1519,6 @@
         userNameDisplay.textContent = user.name;
         userAvatar.textContent = user.name.charAt(0).toUpperCase();
       }
-
       function logout() {
         currentUser = null;
         saveCurrentUserToLocalStorage();
@@ -1921,7 +1527,6 @@
         document.getElementById("loginForm").reset();
         showSuccessMessage("Đã đăng xuất!", "Hẹn gặp lại bạn tại GreenHost!");
       }
-
       function showSuccessMessage(title, detail) {
         document.getElementById("successMessage").innerHTML = title;
         document.getElementById("successDetail").innerHTML = detail;
@@ -1930,7 +1535,6 @@
         );
         successModal.show();
       }
-
       document.querySelectorAll(".auth-tab").forEach((tab) => {
         tab.addEventListener("click", function () {
           const formType = this.getAttribute("data-form");
@@ -1944,24 +1548,20 @@
           document.getElementById(`${formType}-form`).classList.add("active");
         });
       });
-
       function switchToRegister() {
         document.querySelector('.auth-tab[data-form="register"]').click();
       }
       function switchToLogin() {
         document.querySelector('.auth-tab[data-form="login"]').click();
       }
-
       function handleLogin() {
         const email = document.getElementById("loginEmail").value;
         const password = document.getElementById("loginPassword").value;
         let isValid = true;
-
         document.getElementById("loginEmailError").style.display = "none";
         document.getElementById("loginPasswordError").style.display = "none";
         const oldError = document.getElementById("loginAuthError");
         if (oldError) oldError.remove();
-
         if (!email || email.trim() === "") {
           document.getElementById("loginEmailError").innerHTML =
             "Vui lòng nhập email";
@@ -1974,7 +1574,6 @@
           document.getElementById("loginPasswordError").style.display = "block";
           isValid = false;
         }
-
         if (isValid) {
           const foundUser = users.find(
             (user) => user.email === email && user.password === password,
@@ -2005,7 +1604,6 @@
           }
         }
       }
-
       function handleRegister() {
         const name = document.getElementById("regName").value;
         const email = document.getElementById("regEmail").value;
@@ -2013,14 +1611,12 @@
         const confirmPassword =
           document.getElementById("regConfirmPassword").value;
         let isValid = true;
-
         document.getElementById("regNameError").style.display = "none";
         document.getElementById("regEmailError").style.display = "none";
         document.getElementById("regPasswordError").style.display = "none";
         document.getElementById("regConfirmError").style.display = "none";
         const oldEmailError = document.getElementById("regEmailExistsError");
         if (oldEmailError) oldEmailError.remove();
-
         if (!name || name.trim() === "") {
           document.getElementById("regNameError").innerHTML =
             "Vui lòng nhập họ tên";
@@ -2066,7 +1662,6 @@
           document.getElementById("regConfirmError").style.display = "block";
           isValid = false;
         }
-
         if (isValid) {
           const newUser = { email: email, password: password, name: name };
           users.push(newUser);
@@ -2085,7 +1680,6 @@
           }, 1500);
         }
       }
-
       document
         .getElementById("loginPassword")
         ?.addEventListener("keypress", function (event) {
@@ -2102,7 +1696,6 @@
             handleLogin();
           }
         });
-
       document
         .getElementById("logoutBtn")
         ?.addEventListener("click", function (e) {
@@ -2113,6 +1706,101 @@
           );
           if (dropdown) dropdown.hide();
         });
+      // ===== DOMAIN SEARCH MOCK =====
+
+      const tlds = [
+        { ext: ".com", price: 25000 },
+        { ext: ".net", price: 159000 },
+        { ext: ".org", price: 245000 },
+        { ext: ".vn", price: 350000 },
+        { ext: ".id.vn", price: 60000 },
+      ];
+
+      // fake check domain (random available)
+      function checkAvailability() {
+        return Math.random() > 0.3; // 70% available
+      }
+
+      // format tiền
+      function formatPrice(price) {
+        return price.toLocaleString("vi-VN") + " đ/năm";
+      }
+
+      // render kết quả
+      function renderResults(name) {
+        const container = document.getElementById("domainResults");
+        container.innerHTML = "";
+
+        tlds.forEach((tld) => {
+          const domain = name + tld.ext;
+          const available = checkAvailability();
+
+          const item = document.createElement("div");
+          item.className =
+            "d-flex justify-content-between align-items-center border p-3 mb-2 rounded";
+
+          item.innerHTML = `
+      <div>
+        <strong>${domain}</strong><br>
+        <small style="color:${available ? "green" : "red"}">
+          ${available ? "Có thể đăng ký" : "Đã có người mua"}
+        </small>
+      </div>
+
+      <div class="text-end">
+        <div style="font-weight:bold">${formatPrice(tld.price)}</div>
+        ${
+          available
+            ? `<button class="btn btn-sm btn-success mt-1" onclick="addToCart('${domain}', ${tld.price})">Mua</button>`
+            : `<button class="btn btn-sm btn-secondary mt-1" disabled>Không khả dụng</button>`
+        }
+      </div>
+    `;
+
+          container.appendChild(item);
+        });
+      }
+
+      document
+        .getElementById("searchDomainBtn")
+        .addEventListener("click", () => {
+          const name = document.getElementById("domainInput").value.trim();
+
+          if (!name) {
+            alert("Vui lòng nhập tên miền!");
+            return;
+          }
+
+          // HIỆN LOADING
+          document.getElementById("domainResults").innerHTML = "";
+          document.getElementById("domainLoading").style.display = "block";
+
+          // GIẢ LẬP API CALL
+          setTimeout(() => {
+            document.getElementById("domainLoading").style.display = "none";
+            renderResults(name);
+          }, 1500); // 1.5s cho giống thật
+        });
+      function addToCart(domain, price) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        // tránh trùng
+        const exists = cart.find((item) => item.domain === domain);
+        if (exists) {
+          alert("Domain đã có trong giỏ hàng!");
+          return;
+        }
+
+        cart.push({
+          domain: domain,
+          price: price,
+        });
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // chuyển trang
+        window.location.href = "gohang.html";
+      }
     </script>
   </body>
 </html>
